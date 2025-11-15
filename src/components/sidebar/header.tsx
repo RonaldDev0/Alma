@@ -5,7 +5,6 @@ import {
   SidebarMenuItem,
   SidebarMenuButton
 } from '@/components/ui/sidebar'
-import { Skeleton } from '@/components/ui/skeleton'
 import Link from 'next/link'
 
 export default function Header() {
