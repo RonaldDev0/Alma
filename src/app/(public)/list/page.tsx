@@ -1,5 +1,5 @@
 import Link from 'next/link'
-// import Image from 'next/image'
+import { createClient } from '@/lib/supabase/server'
 
 import {
   Table,
@@ -14,7 +14,7 @@ import {
 type TRecord = {
   reference: string
   brand: string
-  image: string
+  image: string | null
 }
 
 type IContact = {
@@ -27,31 +27,13 @@ const contact: IContact = {
   number: '3132006606'
 }
 
-const records: TRecord[] = [
-  {
-    reference: 'IM430',
-    brand: 'Ricoh',
-    image: 'IM430'
-  },
-  {
-    reference: 'MP305',
-    brand: 'Ricoh',
-    image: 'MP305'
-  },
-  {
-    reference: 'IM600',
-    brand: 'Ricoh',
-    image: 'IM600'
-  }
-]
-
 function whatsappInitialMessage ({ reference, brand }: TRecord) {
   return encodeURIComponent(
     `Hola, vi la lista de productos y quiero más información sobre ${brand} ${reference}.`
   )
 }
 
-export function TableData() {
+export function TableData({ records }: { records: TRecord[] }) {
   return (
     <Table>
       <TableCaption>Lista de productos.</TableCaption>
@@ -114,7 +96,20 @@ export function TableData() {
   )
 }
 
-export default function List() {
+export default async function List() {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase
+    .from('product-list')
+    .select('reference, brand')
+    .order('reference', { ascending: true })
+
+  const records = (data ?? []) as TRecord[]
+
+  if (error) {
+    console.error('Error fetching product-list:', error.message)
+  }
+
   return (
     <main className='w-full min-h-screen bg-slate-50 py-10 px-3 sm:py-12 sm:px-4 lg:py-16 lg:px-12'>
       <section className='max-w-4xl mx-auto mb-10 text-center'>
@@ -125,7 +120,7 @@ export default function List() {
         </div>
       </section>
       <section className='mx-auto max-w-full lg:max-w-4xl overflow-x-auto'>
-        <TableData />
+        <TableData records={records} />
       </section>
     </main>
   )
