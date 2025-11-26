@@ -28,19 +28,19 @@ const contact: IContact = {
 
 const records: TRecord[] = [
   {
-    reference: '418126',
+    reference: 'IM430',
     brand: 'Ricoh',
-    model: 'IM 430F'
+    model: 'IM430'
   },
   {
-    reference: '418126',
+    reference: 'MP305',
     brand: 'Ricoh',
-    model: 'P 502'
+    model: 'MP305'
   },
   {
-    reference: 'Toner IM 370F',
+    reference: 'IM600',
     brand: 'Ricoh',
-    model: 'IM 370F'
+    model: 'IM600'
   }
 ]
 
