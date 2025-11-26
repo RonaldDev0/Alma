@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 import {
   Table,
@@ -57,7 +57,7 @@ export function TableData() {
       <TableCaption>Lista de productos.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead className='w-[100px]'>Referencia</TableHead>
+          <TableHead>Referencia</TableHead>
           <TableHead>Marca</TableHead>
           {/* <TableHead>Imagen</TableHead> */}
           <TableHead className='text-right'>Contacto</TableHead>
@@ -84,7 +84,7 @@ export function TableData() {
               <Link
                 href={`tel:${contact.number}`}
                 target='_blank'
-                className='inline-flex items-center justify-center rounded-full border border-slate-300 px-3 py-1 text-xs sm:text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors'
+                className='inline-flex items-center justify-center rounded-full border border-slate-300 px-2 py-1 text-[11px] sm:text-xs font-medium text-slate-700 hover:bg-slate-100 transition-colors'
                 aria-label={`Llamar al número ${contact.number}`}
               >
                 Llamar
@@ -95,7 +95,7 @@ export function TableData() {
                 href={`${contact.WhatsApp}?text=${whatsappInitialMessage(record)}`}
                 target='_blank'
                 rel='noreferrer'
-                className='inline-flex items-center justify-center rounded-full bg-emerald-600 px-3 py-1 text-xs sm:text-sm font-medium text-white hover:bg-emerald-700 transition-colors'
+                className='inline-flex items-center justify-center rounded-full bg-emerald-600 px-2 py-1 text-[11px] sm:text-xs font-medium text-white hover:bg-emerald-700 transition-colors'
                 aria-label='Abrir chat de WhatsApp'
               >
                 WhatsApp
@@ -116,17 +116,17 @@ export function TableData() {
 
 export default function List() {
   return (
-    <main className='w-full min-h-screen bg-slate-50 py-16 px-6 lg:px-12'>
-      <section className='max-w-4xl mx-auto mb-12 text-center'>
+    <main className='w-full min-h-screen bg-slate-50 py-10 px-3 sm:py-12 sm:px-4 lg:py-16 lg:px-12'>
+      <section className='max-w-4xl mx-auto mb-10 text-center'>
         <div className='inline-flex items-center justify-center rounded-full bg-slate-900 text-slate-50 px-5 py-2 shadow-sm'>
           <span className='text-2xl sm:text-3xl font-semibold tracking-tight'>
             Enter
           </span>
         </div>
       </section>
-      <div className='max-w-4xl mx-auto overflow-x-auto'>
+      <section className='mx-auto max-w-full lg:max-w-4xl overflow-x-auto'>
         <TableData />
-      </div>
+      </section>
     </main>
   )
 }
