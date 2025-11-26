@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 import {
   Table,
@@ -13,7 +14,7 @@ import {
 type TRecord = {
   reference: string
   brand: string
-  model: string
+  image: string
 }
 
 type IContact = {
@@ -22,31 +23,31 @@ type IContact = {
 }
 
 const contact: IContact = {
-  WhatsApp: 'https://wa.me/573002855152',
-  number: '3002855152'
+  WhatsApp: 'https://wa.me/573132006606',
+  number: '3132006606'
 }
 
 const records: TRecord[] = [
   {
     reference: 'IM430',
     brand: 'Ricoh',
-    model: 'IM430'
+    image: 'IM430'
   },
   {
     reference: 'MP305',
     brand: 'Ricoh',
-    model: 'MP305'
+    image: 'MP305'
   },
   {
     reference: 'IM600',
     brand: 'Ricoh',
-    model: 'IM600'
+    image: 'IM600'
   }
 ]
 
-function whatsappInitialMessage ({ reference, brand, model }: TRecord) {
+function whatsappInitialMessage ({ reference, brand }: TRecord) {
   return encodeURIComponent(
-    `Hola, vi la lista de productos y quiero más información sobre ${brand} ${reference} ${model}.`
+    `Hola, vi la lista de productos y quiero más información sobre ${brand} ${reference}.`
   )
 }
 
@@ -58,7 +59,7 @@ export function TableData() {
         <TableRow>
           <TableHead className='w-[100px]'>Referencia</TableHead>
           <TableHead>Marca</TableHead>
-          <TableHead>Modelo</TableHead>
+          {/* <TableHead>Imagen</TableHead> */}
           <TableHead className='text-right'>Contacto</TableHead>
           <TableHead className='text-right'>WhatsApp</TableHead>
         </TableRow>
@@ -68,7 +69,17 @@ export function TableData() {
           <TableRow key={index}>
             <TableCell className='font-medium'>{record.reference}</TableCell>
             <TableCell>{record.brand}</TableCell>
-            <TableCell>{record.model}</TableCell>
+            {/* <TableCell>
+              <div className='flex justify-center'>
+                <Image
+                  src={`/toners/${record.image}.png`}
+                  alt={`${record.brand} ${record.reference}`}
+                  width={64}
+                  height={64}
+                  className='h-12 w-auto object-contain'
+                />
+              </div>
+            </TableCell> */}
             <TableCell className='text-right'>
               <Link
                 href={`tel:${contact.number}`}
