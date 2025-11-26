@@ -99,12 +99,6 @@ export default function Footer() {
                     Profile
                   </DropdownMenuItem>
                 </Link>
-                <Link href='/subscription'>
-                  <DropdownMenuItem>
-                    <CreditCard />
-                    Subscription
-                  </DropdownMenuItem>
-                </Link>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <form

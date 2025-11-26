@@ -2,7 +2,8 @@
 
 import {
   ChevronRight,
-  Home
+  Home,
+  Table2
 } from 'lucide-react'
 
 import {
@@ -37,6 +38,11 @@ const items: Item[] = [
     title: 'Home',
     url: '/home',
     icon: Home
+  },
+  {
+    title: 'Lista de productos',
+    url: '/list-config',
+    icon: Table2
   }
 ]
 

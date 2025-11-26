@@ -1,5 +1,7 @@
 import Link from 'next/link'
-import { createClient } from '@/lib/supabase/server'
+import { EditDialog } from './edit-dialog'
+import { Button } from '@/components/ui/button'
+import { EllipsisVertical } from 'lucide-react'
 
 import {
   Table,
@@ -11,17 +13,18 @@ import {
   TableRow
 } from '@/components/ui/table'
 
-type TRecord = {
+export type TRecord = {
   id: number
   reference: string
   brand: string
-  stock: number
+  image: string | null
 }
 
 type IContact = {
   WhatsApp: string
   number: string
 }
+
 
 const contact: IContact = {
   WhatsApp: 'https://wa.me/573132006606',
@@ -45,6 +48,7 @@ export function TableData({ records }: { records: TRecord[] }) {
           {/* <TableHead>Imagen</TableHead> */}
           <TableHead className='text-right'>Contacto</TableHead>
           <TableHead className='text-right'>WhatsApp</TableHead>
+          <TableHead className='text-right'>Ajustes</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -84,41 +88,30 @@ export function TableData({ records }: { records: TRecord[] }) {
                 WhatsApp
               </Link>
             </TableCell>
+            <TableCell className='text-right'>
+              <EditDialog
+                record={record}
+                trigger={
+                  <Button
+                    variant='ghost'
+                    size='sm'
+                    className='h-8 w-8 p-0'
+                    aria-label={`Editar ${record.reference}`}
+                  >
+                    <EllipsisVertical />
+                  </Button>
+                }
+              />
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
+      {/* <TableFooter>
+        <TableRow>
+          <TableCell colSpan={3}>Total</TableCell>
+          <TableCell className='text-right'>$2,500.00</TableCell>
+        </TableRow>
+      </TableFooter> */}
     </Table>
-  )
-}
-
-export default async function List() {
-  const supabase = await createClient()
-
-  const { data, error } = await supabase
-    .from('product-list')
-    .select('id, reference, brand, stock')
-
-  const records = (data ?? []) as TRecord[]
-
-  if (error) {
-    console.error('Error fetching product-list:', error.message)
-  }
-
-  return (
-    <main className='w-full min-h-screen bg-slate-50 py-10 px-3 sm:py-12 sm:px-4 lg:py-16 lg:px-12'>
-      <section className='max-w-4xl mx-auto mb-10 text-center'>
-        <div className='inline-flex items-center justify-center rounded-full bg-slate-900 text-slate-50 px-5 py-2 shadow-sm'>
-          <span className='text-2xl sm:text-3xl font-semibold tracking-tight'>
-            Enter
-          </span>
-        </div>
-      </section>
-      <section className='mx-auto max-w-full lg:max-w-4xl'>
-        <h2 className='text-xl font-semibold text-slate-900 mb-4'>Lista de Productos</h2>
-        <div className='overflow-x-auto'>
-          <TableData records={records} />
-        </div>
-      </section>
-    </main>
   )
 }
