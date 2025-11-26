@@ -199,28 +199,36 @@ export function EditDialog({ record, trigger }: EditDialogProps) {
               <span className='font-semibold'>{record.brand}</span>.
             </AlertDialogDescription>
           </AlertDialogHeader>
-          {error && (
-            <div className='rounded-md bg-destructive/15 p-3 text-sm text-destructive'>
-              {error}
+          <div className='grid gap-4 py-4'>
+            {error && (
+              <div className='rounded-md bg-destructive/15 p-3 text-sm text-destructive'>
+                {error}
+              </div>
+            )}
+          </div>
+          <AlertDialogFooter className='flex-col sm:flex-row gap-2'>
+            <div className='flex-1' />
+            <div className='flex gap-2'>
+              <Button
+                type='button'
+                variant='outline'
+                onClick={() => {
+                  setShowDeleteConfirm(false)
+                  setError(null)
+                }}
+                disabled={isDeleting}
+              >
+                Cancelar
+              </Button>
+              <Button
+                type='button'
+                variant='destructive'
+                onClick={handleDelete}
+                disabled={isDeleting}
+              >
+                {isDeleting ? 'Eliminando...' : 'Eliminar'}
+              </Button>
             </div>
-          )}
-          <AlertDialogFooter>
-            <AlertDialogCancel
-              onClick={() => {
-                setShowDeleteConfirm(false)
-                setError(null)
-              }}
-              disabled={isDeleting}
-            >
-              Cancelar
-            </AlertDialogCancel>
-            <AlertDialogAction
-              onClick={handleDelete}
-              disabled={isDeleting}
-              className='bg-destructive text-destructive-foreground hover:bg-destructive/90'
-            >
-              {isDeleting ? 'Eliminando...' : 'Eliminar'}
-            </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
