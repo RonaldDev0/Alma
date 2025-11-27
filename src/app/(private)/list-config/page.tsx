@@ -8,6 +8,7 @@ export default async function ListConfig () {
   const { data, error } = await supabase
     .from('product-list')
     .select('id, reference, brand')
+    .order('reference', { ascending: true })
 
   const records = (data ?? []) as TRecord[]
 
