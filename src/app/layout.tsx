@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { Poppins } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
@@ -14,12 +14,52 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Enter',
-  description: 'Lista de precios'
+  description: 'Lista de precios',
+  manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512x512.png', sizes: '512x512', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' }
+    ]
+  }
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false
 }
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang='en'>
+      <head>
+        <link rel='manifest' href='/manifest.json' />
+        <link rel='apple-touch-icon' href='/icon-192x192.png' />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js', { scope: '/' })
+                    .then(function(registration) {
+                      console.log('Service Worker registrado:', registration.scope);
+                      // Forzar actualización del service worker
+                      registration.update();
+                    })
+                    .catch(function(error) {
+                      console.error('Error al registrar Service Worker:', error);
+                    });
+                });
+              }
+            `
+          }}
+        />
+      </head>
       <body className={`${poppins.className} antialiased`}>
         {children}
         <Toaster position='top-center' richColors />
