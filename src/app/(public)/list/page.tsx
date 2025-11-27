@@ -40,8 +40,8 @@ export function TableData({ records }: { records: TRecord[] }) {
       <TableCaption>Lista de productos.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead>Referencia</TableHead>
-          <TableHead>Marca</TableHead>
+          <TableHead className='w-[90px] sm:w-[150px]'>Referencia</TableHead>
+          <TableHead className='w-[80px] sm:w-[100px]'>Marca</TableHead>
           {/* <TableHead>Imagen</TableHead> */}
           <TableHead className='text-right'>Contacto</TableHead>
           <TableHead className='text-right'>WhatsApp</TableHead>
@@ -50,8 +50,10 @@ export function TableData({ records }: { records: TRecord[] }) {
       <TableBody>
         {records.map(record => (
           <TableRow key={record.id}>
-            <TableCell className='font-medium'>{record.reference}</TableCell>
-            <TableCell>{record.brand}</TableCell>
+            <TableCell className='font-medium w-[120px] sm:w-[200px] whitespace-normal wrap-break-word text-xs sm:text-sm leading-tight'>
+              {record.reference}
+            </TableCell>
+            <TableCell className='w-[80px] sm:w-[100px] text-xs sm:text-sm'>{record.brand}</TableCell>
             {/* <TableCell>
               <div className='flex justify-center'>
                 <Image
