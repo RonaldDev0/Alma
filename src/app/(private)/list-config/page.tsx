@@ -25,7 +25,7 @@ export default async function ListConfig () {
           </span>
         </div>
       </section>
-      <section className='mx-auto max-w-full lg:max-w-4xl'>
+      <section className='mx-auto max-w-full lg:max-w-6xl'>
         <div className='flex items-center justify-between mb-4'>
           <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos</h2>
           <NewButton />
