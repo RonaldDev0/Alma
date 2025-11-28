@@ -15,6 +15,7 @@ export type TRecord = {
   reference: string
   brand: string
   stock: number
+  family: 'SUMINISTROS' | 'REPUESTOS'
 }
 
 type IContact = {

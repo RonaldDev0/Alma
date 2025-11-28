@@ -7,7 +7,7 @@ export default async function List() {
 
   const { data, error } = await supabase
     .from('product-list')
-    .select('id, reference, brand, stock')
+    .select('id, reference, brand, stock, family')
     .order('reference', { ascending: true })
 
   const records = (data ?? []) as TRecord[]
