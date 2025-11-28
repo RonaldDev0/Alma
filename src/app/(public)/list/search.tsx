@@ -60,14 +60,13 @@ export function Data({ records }: IProps) {
     <>
       <div className='m-4 mb-12'>
         <div className='flex flex-col sm:flex-row gap-3 items-stretch sm:items-center'>
-          {/* Input de búsqueda */}
           <div className='relative flex-1'>
             <Search className='absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground' />
             <Input
               placeholder='Buscar por referencia o marca...'
               value={input}
               onChange={handleChange}
-              className='pl-9 pr-9'
+              className={`pl-9 ${input && 'pr-9'}`}
             />
             {input && (
               <button
@@ -78,8 +77,6 @@ export function Data({ records }: IProps) {
               </button>
             )}
           </div>
-
-          {/* Select de categoría */}
           <div className='flex items-center gap-2'>
             <Select
               value={selectedCategory || 'category'}
@@ -95,8 +92,6 @@ export function Data({ records }: IProps) {
                 <SelectItem value='SUMINISTROS'>Suministros</SelectItem>
               </SelectContent>
             </Select>
-
-            {/* Botón para limpiar filtros */}
             {(input || (selectedCategory && selectedCategory !== 'category')) && (
               <button
                 onClick={() => {
@@ -110,8 +105,6 @@ export function Data({ records }: IProps) {
             )}
           </div>
         </div>
-
-        {/* Indicador de resultados */}
         <div className='mt-3 text-sm text-muted-foreground'>
           {filteredData.length} resultado{filteredData.length !== 1 ? 's' : ''} encontrado{filteredData.length !== 1 ? 's' : ''}
         </div>
