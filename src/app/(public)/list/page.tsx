@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
-import { type TRecord, TableData } from './table'
+import { type TRecord } from './table'
+import { Data } from './search'
 
 export default async function List() {
   const supabase = await createClient()
@@ -25,11 +26,8 @@ export default async function List() {
         </div>
       </section>
       <section className='mx-auto max-w-full lg:max-w-6xl'>
-        <div className='flex items-center justify-between mb-4'>
-          <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos</h2>
-        </div>
         <div className='overflow-x-auto'>
-          <TableData records={records} />
+          <Data records={records} />
         </div>
       </section>
     </main>

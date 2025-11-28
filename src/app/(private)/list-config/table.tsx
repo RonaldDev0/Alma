@@ -45,7 +45,6 @@ export function TableData({ records }: { records: TRecord[] }) {
         <TableRow>
           <TableHead>Referencia</TableHead>
           <TableHead>Marca</TableHead>
-          {/* <TableHead>Imagen</TableHead> */}
           <TableHead className='text-right'>Contacto</TableHead>
           <TableHead className='text-right'>WhatsApp</TableHead>
           <TableHead className='text-right'>Ajustes</TableHead>
@@ -56,17 +55,6 @@ export function TableData({ records }: { records: TRecord[] }) {
           <TableRow key={record.id}>
             <TableCell className='font-medium'>{record.reference}</TableCell>
             <TableCell>{record.brand}</TableCell>
-            {/* <TableCell>
-              <div className='flex justify-center'>
-                <Image
-                  src={`/toners/${record.image}.png`}
-                  alt={`${record.brand} ${record.reference}`}
-                  width={64}
-                  height={64}
-                  className='h-12 w-auto object-contain'
-                />
-              </div>
-            </TableCell> */}
             <TableCell className='text-right'>
               <Link
                 href={`tel:${contact.number}`}
