@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { Search, X, Filter } from 'lucide-react'
 
 type IProps = {
   records: TRecord[]
@@ -36,47 +37,84 @@ export function Data({ records }: IProps) {
   const filteredData = useMemo(() => {
     const lowerInput = debouncedInput?.toLowerCase()
     const shouldFilterCategory = selectedCategory && selectedCategory !== 'category'
-    
+
     return records.filter(record => {
       if (lowerInput) {
-        const matchesInput = 
+        const matchesInput =
           record.reference.toLowerCase().includes(lowerInput) ||
           record.brand.toLowerCase().includes(lowerInput)
-        
+
         if (!matchesInput) return false
       }
-      
+
       if (shouldFilterCategory) {
         return record.family.trim() === selectedCategory
       }
-      
+
       return true
     })
   }, [debouncedInput, selectedCategory, records])
-  
+
 
   return (
     <>
       <div className='m-4 mb-12'>
-        <Input
-          placeholder='Buscar...'
-          value={input}
-          onChange={handleChange}
-          className='mb-3'
-        />
-        <Select
-          defaultValue='category'
-          onValueChange={(category: any) => setCategory(category)}
-        >
-          <SelectTrigger className='w-[150px]'>
-            <SelectValue placeholder='Categoria' />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value='category'>Categoria</SelectItem>
-            <SelectItem value='REPUESTOS'>Repuestos</SelectItem>
-            <SelectItem value='SUMINISTROS'>Suministros</SelectItem>
-          </SelectContent>
-        </Select>
+        <div className='flex flex-col sm:flex-row gap-3 items-stretch sm:items-center'>
+          {/* Input de búsqueda */}
+          <div className='relative flex-1'>
+            <Search className='absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground' />
+            <Input
+              placeholder='Buscar por referencia o marca...'
+              value={input}
+              onChange={handleChange}
+              className='pl-9 pr-9'
+            />
+            {input && (
+              <button
+                onClick={() => setInput('')}
+                className='absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground'
+              >
+                <X className='h-4 w-4' />
+              </button>
+            )}
+          </div>
+
+          {/* Select de categoría */}
+          <div className='flex items-center gap-2'>
+            <Select
+              value={selectedCategory || 'category'}
+              onValueChange={(category: any) => setCategory(category)}
+            >
+              <SelectTrigger className='w-[160px]'>
+                <Filter className='h-4 w-4 mr-2' />
+                <SelectValue placeholder='Categoría' />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value='category'>Todas</SelectItem>
+                <SelectItem value='REPUESTOS'>Repuestos</SelectItem>
+                <SelectItem value='SUMINISTROS'>Suministros</SelectItem>
+              </SelectContent>
+            </Select>
+
+            {/* Botón para limpiar filtros */}
+            {(input || (selectedCategory && selectedCategory !== 'category')) && (
+              <button
+                onClick={() => {
+                  setInput('')
+                  setCategory('category' as any)
+                }}
+                className='text-sm text-muted-foreground hover:text-foreground underline'
+              >
+                Limpiar
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Indicador de resultados */}
+        <div className='mt-3 text-sm text-muted-foreground'>
+          {filteredData.length} resultado{filteredData.length !== 1 ? 's' : ''} encontrado{filteredData.length !== 1 ? 's' : ''}
+        </div>
       </div>
       <div className='flex items-center justify-between mb-4'>
         <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos</h2>
