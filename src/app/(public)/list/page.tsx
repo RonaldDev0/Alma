@@ -40,8 +40,8 @@ export function TableData({ records }: { records: TRecord[] }) {
       <TableCaption>Lista de productos.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead className='w-[90px] sm:w-[150px]'>Referencia</TableHead>
-          <TableHead className='w-[80px] sm:w-[100px]'>Marca</TableHead>
+          <TableHead>Referencia</TableHead>
+          <TableHead className='hidden sm:table-cell'>Marca</TableHead>
           {/* <TableHead>Imagen</TableHead> */}
           <TableHead className='text-right'>Contacto</TableHead>
           <TableHead className='text-right'>WhatsApp</TableHead>
@@ -50,10 +50,13 @@ export function TableData({ records }: { records: TRecord[] }) {
       <TableBody>
         {records.map(record => (
           <TableRow key={record.id}>
-            <TableCell className='font-medium w-[120px] sm:w-[200px] whitespace-normal wrap-break-word text-xs sm:text-sm leading-tight'>
-              {record.reference}
+            <TableCell className='font-medium'>
+              <p className='text-sm sm:text-base leading-snug whitespace-normal wrap-break-word max-w-[240px] sm:max-w-none'>
+                {record.reference}
+              </p>
+              <p className='text-xs text-slate-500 sm:hidden mt-1'>{record.brand}</p>
             </TableCell>
-            <TableCell className='w-[80px] sm:w-[100px] text-xs sm:text-sm'>{record.brand}</TableCell>
+            <TableCell className='hidden sm:table-cell'>{record.brand}</TableCell>
             {/* <TableCell>
               <div className='flex justify-center'>
                 <Image
@@ -65,22 +68,22 @@ export function TableData({ records }: { records: TRecord[] }) {
                 />
               </div>
             </TableCell> */}
-            <TableCell className='text-right'>
+            <TableCell className='text-right align-middle'>
               <Link
                 href={`tel:${contact.number}`}
                 target='_blank'
-                className='inline-flex items-center justify-center rounded-full border border-slate-300 px-2 py-1 text-[11px] sm:text-xs font-medium text-slate-700 hover:bg-slate-100 transition-colors'
+                className='inline-flex w-full sm:w-auto items-center justify-center rounded-full border border-slate-300 px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors'
                 aria-label={`Llamar al número ${contact.number}`}
               >
                 Llamar
               </Link>
             </TableCell>
-            <TableCell className='text-right'>
+            <TableCell className='text-right align-middle'>
               <Link
                 href={`${contact.WhatsApp}?text=${whatsappInitialMessage(record)}`}
                 target='_blank'
                 rel='noreferrer'
-                className='inline-flex items-center justify-center rounded-full bg-emerald-600 px-2 py-1 text-[11px] sm:text-xs font-medium text-white hover:bg-emerald-700 transition-colors'
+                className='inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-emerald-600 px-3 py-1.5 text-xs sm:text-sm font-medium text-white hover:bg-emerald-700 transition-colors'
                 aria-label='Abrir chat de WhatsApp'
               >
                 WhatsApp
@@ -108,7 +111,7 @@ export default async function List() {
   }
 
   return (
-    <main className='w-full min-h-screen bg-slate-50 py-10 px-3 sm:py-12 sm:px-4 lg:py-16 lg:px-12'>
+    <main className='py-4 px-2'>
       <section className='max-w-4xl mx-auto mb-10 text-center'>
         <div className='inline-flex items-center justify-center rounded-full bg-slate-900 text-slate-50 px-5 py-2 shadow-sm'>
           <span className='text-2xl sm:text-3xl font-semibold tracking-tight'>
@@ -116,8 +119,10 @@ export default async function List() {
           </span>
         </div>
       </section>
-      <section className='mx-auto max-w-full lg:max-w-4xl'>
-        <h2 className='text-xl font-semibold text-slate-900 mb-4'>Lista de Productos</h2>
+      <section className='mx-auto max-w-full lg:max-w-6xl'>
+        <div className='flex items-center justify-between mb-4'>
+          <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos</h2>
+        </div>
         <div className='overflow-x-auto'>
           <TableData records={records} />
         </div>
