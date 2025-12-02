@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createClient } from '@/lib/supabase/server'
 import { Data } from '@/components/list-search'
 import { type TRecord } from './table'
@@ -10,7 +11,18 @@ export default async function List() {
     .select('id, reference, brand, stock, family')
     .order('reference', { ascending: true })
 
-  const records = (data ?? []) as TRecord[]
+  let records = (data ?? []) as TRecord[]
+
+  supabase.channel('product-list-channel')
+    .on(
+      'postgres_changes',
+      { event: '*', schema: 'public', table: 'product-list' },
+      (payload) => {
+        console.log('Change received!', payload.new)
+        records = [...records.filter(item => item.id !== payload.new.id), payload.new]
+      }
+    )
+    .subscribe()
 
   if (error) {
     console.error('Error fetching product-list:', error.message)
