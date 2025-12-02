@@ -41,7 +41,7 @@ const items: Item[] = [
   },
   {
     title: 'Lista de productos',
-    url: '/list-config',
+    url: '/config-list',
     icon: Table2
   }
 ]

@@ -4,8 +4,8 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Input } from '@/components/ui/input'
 import { TableData, type TRecord } from '@/app/(public)/list/table'
-import { TableData as TableDataConfig } from '@/app/(private)/list-config/table'
-import { NewButton } from '@/app/(private)/list-config/new-button'
+import { TableData as TableDataConfig } from '@/app/(private)/config-list/table'
+import { NewButton } from '@/app/(private)/config-list/new-button'
 import {
   Select,
   SelectContent,
