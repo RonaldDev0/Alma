@@ -48,7 +48,8 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(new URL('/home', request.url))
   }
 
-  const adminIds = ['4e02a6a0-7961-4844-91e6-ce788f5005c7']
+  // Block unauthenticated users from protected routes
+  const adminIds = ['4e02a6a0-7961-4844-91e6-ce788f5005c7', '8fa9c935-5756-4854-8fea-8470457cd6b9']
 
   if (!adminIds.includes(user?.id ?? '') && !isPublicRoute) {
     return NextResponse.rewrite(new URL('/not-found', request.url))
