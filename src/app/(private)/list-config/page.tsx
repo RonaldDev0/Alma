@@ -1,13 +1,13 @@
 import { createClient } from '@/lib/supabase/server'
-import { type TRecord, TableData } from './table'
-import { NewButton } from './new-button'
+import { Data } from '@/components/list-search'
+import { type TRecord } from './table'
 
 export default async function ListConfig () {
   const supabase = await createClient()
 
   const { data, error } = await supabase
     .from('product-list')
-    .select('id, reference, brand')
+    .select('id, reference, brand, stock, family')
     .order('reference', { ascending: true })
 
   const records = (data ?? []) as TRecord[]
@@ -26,12 +26,8 @@ export default async function ListConfig () {
         </div>
       </section>
       <section className='mx-auto max-w-full lg:max-w-6xl'>
-        <div className='flex items-center justify-between mb-4'>
-          <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos</h2>
-          <NewButton />
-        </div>
         <div className='overflow-x-auto'>
-          <TableData records={records} />
+          <Data records={records} isConfig={true} />
         </div>
       </section>
     </main>

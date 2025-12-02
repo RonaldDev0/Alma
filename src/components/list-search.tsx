@@ -3,7 +3,9 @@
 
 import { useState, useMemo, useEffect } from 'react'
 import { Input } from '@/components/ui/input'
-import { TableData, type TRecord } from './table'
+import { TableData, type TRecord } from '@/app/(public)/list/table'
+import { TableData as TableDataConfig } from '@/app/(private)/list-config/table'
+import { NewButton } from '@/app/(private)/list-config/new-button'
 import {
   Select,
   SelectContent,
@@ -15,9 +17,10 @@ import { Search, X, Filter } from 'lucide-react'
 
 type IProps = {
   records: TRecord[]
+  isConfig?: boolean
 }
 
-export function Data({ records }: IProps) {
+export function Data({ records, isConfig = false }: IProps) {
   const [input, setInput] = useState('')
   const [debouncedInput, setDebouncedInput] = useState('')
   const [selectedCategory, setCategory] = useState()
@@ -109,10 +112,18 @@ export function Data({ records }: IProps) {
           {filteredData.length} resultado{filteredData.length !== 1 ? 's' : ''} encontrado{filteredData.length !== 1 ? 's' : ''}
         </div>
       </div>
-      <div className='flex items-center justify-between mb-4'>
-        <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos</h2>
-      </div>
-      <TableData records={filteredData} />
+      {isConfig ? <>
+        <div className='flex items-center justify-between mb-4'>
+          <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos</h2>
+          <NewButton />
+        </div>
+        <TableDataConfig records={filteredData} />
+      </> : <>
+        <div className='flex items-center justify-between mb-4'>
+          <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos</h2>
+        </div>
+        <TableData records={filteredData} />
+      </>}
     </>
   )
 }

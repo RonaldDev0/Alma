@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
+import { Data } from '@/components/list-search'
 import { type TRecord } from './table'
-import { Data } from './search'
 
 export default async function List() {
   const supabase = await createClient()
