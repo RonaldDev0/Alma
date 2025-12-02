@@ -29,6 +29,10 @@ export async function updateSession(request: NextRequest) {
   const publicRoutes = ['/login', '/signup', '/forgot-password', '/auth/confirm', '/auth/callback', '/auth/auth-code-error', '/pricing', '/api/plans', '/api/lemonsqueezy-webhook', '/products', '/api/db', '/list']
   const isPublicRoute = pathname === '/' || publicRoutes.some(route => pathname.startsWith(route))
 
+  if (user?.id !== '4e02a6a0-7961-4844-91e6-ce788f5005c7' && !isPublicRoute) {
+    return NextResponse.rewrite(new URL('/not-found', request.url))
+  }
+
   if (pathname === '/' && request.nextUrl.searchParams.has('code')) {
     const code = request.nextUrl.searchParams.get('code') as string
     const callback = new URL('/auth/callback', request.url)
