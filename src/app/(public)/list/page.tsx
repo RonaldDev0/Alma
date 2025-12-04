@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createClient } from '@/lib/supabase/server'
-import { Data } from '@/components/list-search'
+import { ListClient } from './list-client'
 import { type TRecord } from './table'
 
 export default async function List() {
@@ -11,22 +10,11 @@ export default async function List() {
     .select('id, reference, brand, stock, family')
     .order('reference', { ascending: true })
 
-  let records = (data ?? []) as TRecord[]
-
-  supabase.channel('product-list-channel')
-    .on(
-      'postgres_changes',
-      { event: '*', schema: 'public', table: 'product-list' },
-      (payload) => {
-        console.log('Change received!', payload.new)
-        records = [...records.filter(item => item.id !== payload.new.id), payload.new]
-      }
-    )
-    .subscribe()
-
   if (error) {
     console.error('Error fetching product-list:', error.message)
   }
+
+  const initialRecords = (data ?? []) as TRecord[]
 
   return (
     <main className='py-4 px-2'>
@@ -39,7 +27,7 @@ export default async function List() {
       </section>
       <section className='mx-auto max-w-full lg:max-w-6xl'>
         <div className='overflow-x-auto'>
-          <Data records={records} />
+          <ListClient initialRecords={initialRecords} />
         </div>
       </section>
     </main>

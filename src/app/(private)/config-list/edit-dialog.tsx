@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import {
   AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
@@ -175,15 +173,19 @@ export function EditDialog({ record, trigger }: EditDialogProps) {
             </Button>
           </div>
           <div className='flex gap-2'>
-            <AlertDialogCancel onClick={handleCancel} disabled={isLoading || isDeleting}>
+            <Button
+              variant='outline'
+              onClick={handleCancel}
+              disabled={isLoading || isDeleting}
+            >
               Cancelar
-            </AlertDialogCancel>
-            <AlertDialogAction
+            </Button>
+            <Button
               onClick={handleSubmit}
               disabled={!reference.trim() || !brand.trim() || isLoading || isDeleting}
             >
               {isLoading ? 'Guardando...' : 'Guardar cambios'}
-            </AlertDialogAction>
+            </Button>
           </div>
         </AlertDialogFooter>
       </AlertDialogContent>
