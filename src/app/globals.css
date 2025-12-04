@@ -214,3 +214,18 @@
 .animate-slideUp {
   animation: slideUp 0.3s ease-out;
 }
+
+@layer utilities {
+  @keyframes highlight {
+    0% {
+      background-color: rgba(255, 230, 0, 0.7);
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+
+  .animate-update {
+    animation: highlight 1s ease-out;
+  }
+}
