@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
 import { useState } from 'react'
@@ -17,6 +18,13 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { createClient } from '@/lib/supabase/client'
 
 export function NewButton() {
@@ -25,6 +33,7 @@ export function NewButton() {
 
   const [reference, setReference] = useState('')
   const [brand, setBrand] = useState('')
+  const [selectedCategory, setCategory] = useState()
   const [isOpen, setIsOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -39,7 +48,8 @@ export function NewButton() {
         .insert([
           {
             reference: reference.trim(),
-            brand: brand.trim()
+            brand: brand.trim(),
+            family: selectedCategory
           }
         ])
 
@@ -51,6 +61,7 @@ export function NewButton() {
       setReference('')
       setBrand('')
       setIsOpen(false)
+      setCategory('' as any)
       router.refresh() // Refresh the page to show the new record
     } catch (err) {
       console.error('Error inserting product:', err)
@@ -124,6 +135,23 @@ export function NewButton() {
               required
             />
           </div>
+          <div className='grid gap-2'>
+            <Label htmlFor='brand'>
+              Familia <span className='text-destructive'>*</span>
+            </Label>
+            <Select
+              value={selectedCategory}
+              onValueChange={(category: any) => setCategory(category)}
+            >
+              <SelectTrigger className='w-full'>
+                <SelectValue placeholder='Ej: Repuestos, Suministros' />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value='REPUESTOS'>Repuestos</SelectItem>
+                <SelectItem value='SUMINISTROS'>Suministros</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
         <AlertDialogFooter>
           <AlertDialogCancel onClick={handleCancel} disabled={isLoading}>
@@ -131,7 +159,7 @@ export function NewButton() {
           </AlertDialogCancel>
           <AlertDialogAction
             onClick={handleSubmit}
-            disabled={!reference.trim() || !brand.trim() || isLoading}
+            disabled={!reference.trim() || !brand.trim() || !selectedCategory || isLoading}
           >
             {isLoading ? 'Agregando...' : 'Agregar'}
           </AlertDialogAction>

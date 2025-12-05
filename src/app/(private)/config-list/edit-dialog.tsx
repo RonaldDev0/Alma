@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -14,6 +15,13 @@ import {
 
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { Button } from '@/components/ui/button'
 import { createClient } from '@/lib/supabase/client'
 import type { TRecord } from './table'
@@ -31,6 +39,7 @@ export function EditDialog({ record, trigger }: EditDialogProps) {
   const [reference, setReference] = useState(record.reference)
   const [brand, setBrand] = useState(record.brand)
   const [isOpen, setIsOpen] = useState(false)
+  const [selectedCategory, setCategory] = useState(record.family)
   const [isLoading, setIsLoading] = useState(false)
   const [isDeleting, setIsDeleting] = useState(false)
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
@@ -40,6 +49,7 @@ export function EditDialog({ record, trigger }: EditDialogProps) {
   useEffect(() => {
     setReference(record.reference)
     setBrand(record.brand)
+    setCategory(record.family)
   }, [record])
 
   const handleSubmit = async () => {
@@ -51,7 +61,8 @@ export function EditDialog({ record, trigger }: EditDialogProps) {
         .from('product-list')
         .update({
           reference: reference.trim(),
-          brand: brand.trim()
+          brand: brand.trim(),
+          family: selectedCategory
         })
         .eq('id', record.id)
 
@@ -159,6 +170,23 @@ export function EditDialog({ record, trigger }: EditDialogProps) {
               required
             />
           </div>
+          <div className='grid gap-2'>
+            <Label htmlFor='brand'>
+              Familia <span className='text-destructive'>*</span>
+            </Label>
+            <Select
+              value={selectedCategory}
+              onValueChange={(category: any) => setCategory(category)}
+            >
+              <SelectTrigger className='w-full'>
+                <SelectValue placeholder='Ej: Repuestos, Suministros' />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value='REPUESTOS'>Repuestos</SelectItem>
+                <SelectItem value='SUMINISTROS'>Suministros</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
         <AlertDialogFooter className='flex-col sm:flex-row gap-2'>
           <div className='flex-1'>
@@ -182,7 +210,7 @@ export function EditDialog({ record, trigger }: EditDialogProps) {
             </Button>
             <Button
               onClick={handleSubmit}
-              disabled={!reference.trim() || !brand.trim() || isLoading || isDeleting}
+              disabled={!reference.trim() || !brand.trim() || !selectedCategory || isLoading || isDeleting}
             >
               {isLoading ? 'Guardando...' : 'Guardar cambios'}
             </Button>
