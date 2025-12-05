@@ -38,7 +38,7 @@ export function Data({ records, isConfig = false }: IProps) {
   }
 
   const filteredData = useMemo(() => {
-    const lowerInput = debouncedInput?.toLowerCase()
+    const lowerInput = debouncedInput?.trim().toLowerCase()
     const shouldFilterCategory = selectedCategory && selectedCategory !== 'category'
 
     return records.filter(record => {
