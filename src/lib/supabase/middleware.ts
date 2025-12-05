@@ -55,5 +55,9 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.rewrite(new URL('/not-found', request.url))
   }
 
+  if (pathname === '/') {
+    return NextResponse.rewrite(new URL('/list', request.url))
+  }
+
   return supabaseResponse
 }
