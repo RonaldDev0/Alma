@@ -117,7 +117,7 @@ export function TableData({ records }: { records: TRecord[] }) {
               }
             >
               <TableCell className='font-medium'>
-                <p className='text-sm sm:text-base leading-snug whitespace-normal wrap-break-word max-w-[220px] sm:max-w-none'>
+                <p className='text-[12px] sm:text-base leading-snug whitespace-normal wrap-break-word max-w-[220px] sm:max-w-none'>
                   {record.reference}
                 </p>
                 <p className='text-xs text-slate-500 sm:hidden mt-1'>{record.brand}</p>
