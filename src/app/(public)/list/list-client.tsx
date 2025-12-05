@@ -25,6 +25,8 @@ export function ListClient({ initialRecords }: ListClientProps) {
         'postgres_changes',
         { event: '*', schema: 'public', table: 'product-list' },
         payload => {
+          const notification = new Audio('/notification.wav')
+          notification.play()
           setRecords(prev => {
             if (payload.eventType === 'DELETE') {
               const updated = prev.map(item =>
