@@ -51,7 +51,7 @@ export function Data({ records, isConfig = false }: IProps) {
       }
 
       if (shouldFilterCategory) {
-        return record.family.trim() === selectedCategory
+        return (record.family ?? '').trim() === selectedCategory
       }
 
       return true
