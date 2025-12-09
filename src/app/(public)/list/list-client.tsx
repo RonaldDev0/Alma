@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { Data } from '@/components/list-search'
 import { type TRecord } from './table'
+import { SubscribeUser } from '@/components/subscribe-notification-user'
 
 interface ListClientProps {
   initialRecords: TRecord[]
@@ -15,8 +16,6 @@ type AnimatedRecord = TRecord & {
 
 export function ListClient({ initialRecords }: ListClientProps) {
   const [records, setRecords] = useState<AnimatedRecord[]>(initialRecords)
-
-  Notification.requestPermission()
 
   useEffect(() => {
     const supabase = createClient()
@@ -78,5 +77,10 @@ export function ListClient({ initialRecords }: ListClientProps) {
     }
   }, [])
 
-  return <Data records={records} />
+  return (
+    <>
+      <SubscribeUser />
+      <Data records={records} />
+    </>
+  )
 }
