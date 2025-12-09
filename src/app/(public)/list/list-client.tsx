@@ -16,6 +16,8 @@ type AnimatedRecord = TRecord & {
 export function ListClient({ initialRecords }: ListClientProps) {
   const [records, setRecords] = useState<AnimatedRecord[]>(initialRecords)
 
+  Notification.requestPermission()
+
   useEffect(() => {
     const supabase = createClient()
 
