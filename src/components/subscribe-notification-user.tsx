@@ -1,9 +1,16 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import { useEffect } from 'react'
+import { useUserStore, selectUser, selectUserLoading } from '@/store/user'
 
 export function SubscribeUser() {
+  const user = useUserStore(selectUser)
+  const loading = useUserStore(selectUserLoading)
+
   useEffect(() => {
+    if (loading) return
+
     async function subscribe() {
       const permission = await Notification.requestPermission()
       if (permission !== 'granted') {
@@ -23,14 +30,17 @@ export function SubscribeUser() {
       await fetch('/api/save-notifications-subscription', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(subscription)
+        body: JSON.stringify({
+          user_id: user?.id,
+          subscription
+        })
       })
 
       alert('Suscripcion guardada correctamente')
     }
 
     subscribe().catch(err => console.error('Error suscribiendo: ', err))
-  }, [])
+  }, [loading])
 
   return null
 }

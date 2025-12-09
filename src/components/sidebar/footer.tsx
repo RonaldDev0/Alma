@@ -4,7 +4,6 @@ import { logout } from './actions'
 import {
   User,
   ChevronsUpDown,
-  CreditCard,
   LogOut,
 } from 'lucide-react'
 import { useActionState, useEffect } from 'react'
