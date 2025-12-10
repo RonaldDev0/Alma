@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import { useEffect } from 'react'
@@ -10,37 +9,56 @@ export function SubscribeUser() {
 
   useEffect(() => {
     if (loading) return
-
+  
     async function subscribe() {
-      const permission = await Notification.requestPermission()
-      if (permission !== 'granted') {
-        alert('Debes aceptar notificaciones para suscribirte')
-        return
-      }
-
-      const reg = await navigator.serviceWorker.ready
-
-      const subscription = await reg.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: urlBase64ToUint8Array(
-          process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY
-        )
-      })
-
-      await fetch('/api/save-notifications-subscription', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          user_id: user?.id,
-          subscription
+      try {
+        const permission = await Notification.requestPermission()
+        if (permission !== 'granted') {
+          console.warn('Permiso no concedido')
+          return
+        }
+  
+        const reg = await navigator.serviceWorker.ready
+        let subscription = await reg.pushManager.getSubscription()
+  
+        if (!subscription) {
+          const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY
+          if (!vapidKey) {
+            throw new Error('VAPID key no encontrada')
+          }
+  
+          console.log('Creando suscripción...')
+          subscription = await reg.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey: urlBase64ToUint8Array(vapidKey)
+          })
+          console.log('✅ Suscripción creada')
+        } else {
+          console.log('✅ Ya existe suscripción, reutilizando')
+        }
+  
+        const response = await fetch('/api/save-notifications-subscription', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user_id: user?.id,
+            subscription
+          })
         })
-      })
-
-      alert('Suscripcion guardada correctamente')
+  
+        if (!response.ok) {
+          throw new Error(`Error guardando: ${response.status}`)
+        }
+  
+        console.log('✅ Suscripción guardada/actualizada en backend')
+  
+      } catch (err) {
+        console.error('❌ Error:', err)
+      }
     }
-
-    subscribe().catch(err => console.error('Error suscribiendo: ', err))
-  }, [loading])
+  
+    subscribe()
+  }, [loading, user?.id])
 
   return null
 }
@@ -50,10 +68,8 @@ function urlBase64ToUint8Array(base64String: any) {
   const base64 = (base64String + padding)
     .replace(/-/g, '+')
     .replace(/_/g, '/')
-
-  const rawData = atob(base64);
+  const rawData = atob(base64)
   const outputArray = new Uint8Array(rawData.length)
-
   for (let i = 0; i < rawData.length; ++i) {
     outputArray[i] = rawData.charCodeAt(i)
   }
