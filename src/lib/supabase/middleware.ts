@@ -26,7 +26,7 @@ export async function updateSession(request: NextRequest) {
   const { data: { user } } = await supabase.auth.getUser()
   const { pathname } = request.nextUrl
 
-  const publicRoutes = ['/login', '/signup', '/forgot-password', '/auth/confirm', '/auth/callback', '/auth/auth-code-error', '/pricing', '/api/plans', '/api/lemonsqueezy-webhook', '/products', '/api/db', '/list']
+  const publicRoutes = ['/login', '/signup', '/forgot-password', '/auth/confirm', '/auth/callback', '/auth/auth-code-error', '/pricing', '/api/plans', '/api/lemonsqueezy-webhook', '/products', '/api/db', '/list', '/support', '/contact']
   const isPublicRoute = pathname === '/' || publicRoutes.some(route => pathname.startsWith(route))
 
   if (pathname === '/' && request.nextUrl.searchParams.has('code')) {
@@ -53,10 +53,6 @@ export async function updateSession(request: NextRequest) {
 
   if (!adminIds.includes(user?.id ?? '') && !isPublicRoute) {
     return NextResponse.rewrite(new URL('/not-found', request.url))
-  }
-
-  if (pathname === '/') {
-    return NextResponse.rewrite(new URL('/list', request.url))
   }
 
   return supabaseResponse
