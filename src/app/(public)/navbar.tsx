@@ -38,9 +38,12 @@ export default function Navbar() {
                   alt='Enter'
                   width={40}
                   height={40}
-                  className='h-14 w-14'
+                  className='h-14 w-14 rounded-lg'
                 />
-                <span className='font-bold text-xl'>Enter</span>
+                <div className='flex flex-col justify-center'>
+                  <span className='font-bold text-xl'>Enter</span>
+                  <span className='text-sm text-gray-700 dark:text-gray-400'>Comercial Tecnologica</span>
+                </div>
               </Link>
             </div>
 
@@ -75,7 +78,7 @@ export default function Navbar() {
 
             {/* Right items */}
             <div className='hidden md:flex justify-center items-center'>
-              <Link href='/contact' className='bg-black text-white py-2 px-4 rounded-lg mr-2'>
+              <Link href='/contact' className='bg-black text-white dark:bg-white dark:text-black py-2 px-4 rounded-lg mr-2'>
                 Contacto
               </Link>
               <ThemeToggle />

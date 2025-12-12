@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Whatsapp() {
-  const phoneNumber = '573132006606';
-  const message = 'Hola, vi la página y estoy interesado. ¿Podrías brindarme más información?';
+  const phoneNumber = '573132006606'
+  const message = 'Hola, vi la página y estoy interesado. ¿Podrías brindarme más información?'
 
   const ws = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
@@ -21,7 +21,7 @@ export default function Whatsapp() {
         alt='WhatsApp icon'
         className='rounded-full'
       />
-      <span className='absolute inset-0 rounded-full animate-ping bg-green-400 opacity-20'></span>
+      <span className='absolute inset-0 rounded-full animate-ping bg-green-400 opacity-20' />
     </Link>
   )
 }

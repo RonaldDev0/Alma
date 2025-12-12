@@ -34,7 +34,7 @@ export default function LoginPage() {
       <Card className='w-full max-w-sm'>
         <CardHeader className='text-center'>
           <div className='mb-2'>
-            <h1 className='text-2xl font-bold text-primary'>Alma</h1>
+            <h1 className='text-2xl font-bold text-primary'>Enter</h1>
           </div>
           <CardTitle>Bienvenido de nuevo</CardTitle>
         </CardHeader>
