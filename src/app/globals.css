@@ -230,3 +230,7 @@
     animation: highlight 1s ease-out;
   }
 }
+
+html, body {
+  scroll-behavior: smooth;
+}

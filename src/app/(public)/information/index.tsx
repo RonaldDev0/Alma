@@ -2,7 +2,7 @@ import { CardInformation, type IData } from './card'
 
 const data: IData[] = [
   {
-    img: '',
+    img: '/information/1.webp',
     title: 'Hogar',
     description: 'Reparación sin salir',
     keypoints: [
@@ -21,7 +21,7 @@ const data: IData[] = [
     ]
   },
   {
-    img: '',
+    img: '/information/2.webp',
     title: 'Locales Comerciales',
     description: 'Atención para Negocios',
     keypoints: [
@@ -40,7 +40,7 @@ const data: IData[] = [
     ]
   },
   {
-    img: '',
+    img: '/information/3.webp',
     title: 'Corporativo',
     description: 'Mantenimiento para Empresas',
     keypoints: [
@@ -62,12 +62,18 @@ const data: IData[] = [
 
 export default function Information() {
   return (
-    <section className='flex flex-col justify-center mt-16 px-72 space-y-8'>
-      <h2 className='text-xl font-bold'>Soluciones Integrales para Impresoras</h2>
-      <div className='flex justify-between gap-8'>
-        {data.map((item, index) =>
-          <CardInformation key={index} item={item} />
-        )}
+    <section className='flex flex-col justify-center mt-16 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64 space-y-8'>
+      <h2 className="text-xl font-bold text-center md:text-left">
+        Soluciones Integrales para Impresoras
+      </h2>
+
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        {data.map(item => (
+          <CardInformation
+            key={item.img}
+            item={item}
+          />
+        ))}
       </div>
     </section>
   )

@@ -60,15 +60,15 @@ export default function Navbar() {
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                      <Link href='/products'>
+                      <Link href='/list'>
                         Productos
                       </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                      <Link href='/support'>
-                        Soporte tecnico
+                      <Link href='#privacy'>
+                        Privacidad
                       </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
@@ -78,7 +78,7 @@ export default function Navbar() {
 
             {/* Right items */}
             <div className='hidden md:flex justify-center items-center'>
-              <Link href='/contact' className='bg-black text-white dark:bg-white dark:text-black py-2 px-4 rounded-lg mr-2'>
+              <Link target='_blank' href='https://wa.me/573132006606?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20estoy%20interesado.%20%C2%BFPodr%C3%ADas%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F' className='bg-black text-white dark:bg-white dark:text-black py-2 px-4 rounded-lg mr-2'>
                 Contacto
               </Link>
               <ThemeToggle />
@@ -111,21 +111,21 @@ export default function Navbar() {
                         Inicio
                       </Link>
                       <Link
-                        href='/products'
+                        href='/list'
                         className='py-2 font-medium transition-colors hover:text-foreground/80'
                         onClick={() => setIsOpen(false)}
                       >
                         Productos
                       </Link>
                       <Link
-                        href='/support'
+                        href='#privacy'
                         className='py-2 font-medium transition-colors hover:text-foreground/80'
                         onClick={() => setIsOpen(false)}
                       >
-                        Soporte tecnico
+                        Privacidad
                       </Link>
                       <Link
-                        href='/contact'
+                        href='https://wa.me/573132006606?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20estoy%20interesado.%20%C2%BFPodr%C3%ADas%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F'
                         className='py-2 font-medium transition-colors hover:text-foreground/80'
                         onClick={() => setIsOpen(false)}
                       >

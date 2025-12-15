@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section className='relative w-screen md:w-[98.9vw] h-[35vh] md:h-[60vh] mx-auto flex items-center justify-center overflow-hidden'>
       <Image
-        src='/hero-1.webp'
+        src='/hero-1.jpg'
         alt='hero'
         fill
         priority
@@ -25,7 +25,7 @@ export default function Hero() {
           Mantenimiento de impresoras para Empresas y Hogar
         </h1>
         <span className='text-sm md:text-lg'>
-          Atendemos en Bogotá, Cali, Palmira, Medellín, Pereira y Dosquebradas.
+          Atendemos en Bogotá, Chia, Cajica, Funza, Madrid, Mosquera y alrededores.
         </span>
         <Link target='_blank' href={ws}>
           <Button className='bg-green-600 hover:bg-green-700 text-white text-sm md:text-base'>
@@ -34,6 +34,5 @@ export default function Hero() {
         </Link>
       </div>
     </section>
-
   )
 }

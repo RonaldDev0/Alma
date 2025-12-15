@@ -18,7 +18,7 @@ export default function GetService() {
   const [data, setData] = useState()
 
   const link = `https://wa.me/573132006606?text=${encodeURIComponent(
-    `Hola, vi tu pagina y estoy interesado en solicitar un servicio para la ciudad de ${data}`
+    `Hola, vi tu pagina y estoy interesado en solicitar un servicio para ${data}`
   )}`
 
   return (
@@ -36,23 +36,23 @@ export default function GetService() {
       <div className='my-8 flex flex-col md:flex-row gap-4 md:gap-8'>
         <Select value={data} onValueChange={city => setData(city as any)}>
           <SelectTrigger className='w-[220px]'>
-            <SelectValue placeholder='Selecciona tu ciudad' />
+            <SelectValue placeholder='Selecciona tu ubicación' />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              <SelectLabel>Ciudad</SelectLabel>
+              <SelectLabel>Ubicación</SelectLabel>
               <SelectItem value='Bogotá'>Bogotá</SelectItem>
-              <SelectItem value='Medellín'>Medellín</SelectItem>
-              <SelectItem value='Cali'>Cali</SelectItem>
-              <SelectItem value='Pereira'>Pereira</SelectItem>
-              <SelectItem value='Palmira'>Palmira</SelectItem>
-              <SelectItem value='Dosquebradas'>Dosquebradas</SelectItem>
+              <SelectItem value='Chia'>Chia</SelectItem>
+              <SelectItem value='Cajica'>Cajica</SelectItem>
+              <SelectItem value='Funza'>Funza</SelectItem>
+              <SelectItem value='Madrid'>Madrid</SelectItem>
+              <SelectItem value='Mosquera'>Mosquera</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
 
         {data ? (
-          <Link href={link}>
+          <Link href={link} target='_blank'>
             <Button>
               Solicitar servicio
             </Button>
@@ -65,8 +65,7 @@ export default function GetService() {
       </div>
 
       <p className='max-w-full md:max-w-2xl px-4 opacity-75'>
-        Arreglo de impresoras a domicilio en Bogotá, Medellín, Cali, Pereira,
-        Palmira y Dosquebradas.
+        Arreglo de impresoras a domicilio en Bogotá, Chia, Cajica, Funza, Madrid, Mosquera y alrededores.
         <span className='block font-bold mt-2'>Soluciones rápidas.</span>
       </p>
     </section>

@@ -2,6 +2,7 @@ import Whatsapp from '@/components/whatsapp'
 import Hero from './hero'
 import GetService from './get-service'
 import Information from './information'
+import Privacy from './privacy'
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       <Hero />
       <GetService />
       <Information />
-      <div className='h-dvh' />
+      <Privacy />
     </main>
   )
 }
