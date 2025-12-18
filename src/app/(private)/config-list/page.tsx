@@ -18,13 +18,6 @@ export default async function ListConfig () {
 
   return (
     <main className='p-4'>
-      <section className='max-w-4xl mx-auto mb-10 text-center'>
-        <div className='inline-flex items-center justify-center rounded-full bg-slate-900 text-slate-50 px-5 py-2 shadow-sm'>
-          <span className='text-2xl sm:text-3xl font-semibold tracking-tight'>
-            Enter
-          </span>
-        </div>
-      </section>
       <section className='mx-auto max-w-full lg:max-w-6xl'>
         <div className='overflow-x-auto'>
           <Data records={records} isConfig={true} />
