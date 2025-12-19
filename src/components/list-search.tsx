@@ -114,13 +114,13 @@ export function Data({ records, isConfig = false }: IProps) {
       </div>
       {isConfig ? <>
         <div className='flex items-center justify-between mb-4'>
-          <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos</h2>
+          <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos y Servicios</h2>
           <NewButton />
         </div>
         <TableDataConfig records={filteredData} />
       </> : <>
         <div className='flex items-center justify-between mb-4'>
-          <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos</h2>
+          <h2 className='text-xl font-semibold text-slate-900'>Lista de Productos y Servicios</h2>
         </div>
         <TableData records={filteredData} />
       </>}
