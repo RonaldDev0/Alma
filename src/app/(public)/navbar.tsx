@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu } from 'lucide-react'
+import { Menu, Phone } from 'lucide-react'
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -42,7 +42,12 @@ export default function Navbar() {
                 />
                 <div className='flex flex-col justify-center'>
                   <span className='font-bold text-xl'>CTEnter</span>
-                  <span className='text-sm text-gray-700 dark:text-gray-400'>Comercial Tecnologica</span>
+                  <span className='text-sm text-gray-700 dark:text-gray-400'>
+                    <span className='text-red-800 text-lg font-bold'>C</span>
+                    omercial {' '}
+                    <span className='text-red-800 text-lg font-bold'>T</span>
+                    ecnologica
+                    </span>
                 </div>
               </Link>
             </div>
@@ -69,6 +74,13 @@ export default function Navbar() {
                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                       <Link href='#privacy'>
                         Privacidad
+                      </Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                      <Link href='tel:3132006606' target='_blank'>
+                        <Phone />
                       </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
