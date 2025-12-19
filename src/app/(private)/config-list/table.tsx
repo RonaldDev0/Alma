@@ -54,13 +54,13 @@ export function TableData({ records }: { records: TRecord[] }) {
         <TableBody>
           {records.map(record => (
             <TableRow key={record.id}>
-              <TableCell className='font-medium'>{record.reference}</TableCell>
-              <TableCell>{record.brand}</TableCell>
+              <TableCell className='font-medium text-[13px]'>{record.reference}</TableCell>
+              <TableCell className='text-[13px]'>{record.brand}</TableCell>
               <TableCell className='text-right'>
                 <Link
                   href={`tel:${contact.number}`}
                   target='_blank'
-                  className='inline-flex items-center justify-center rounded-full border border-slate-300 px-2 py-1 text-[11px] sm:text-xs font-medium text-slate-700 hover:bg-slate-100 transition-colors'
+                  className='inline-flex items-center justify-center rounded-full border border-slate-300 px-3 py-1.5 text-[11px] text-xs font-medium text-slate-700 hover:bg-slate-100 transition-colors'
                   aria-label={`Llamar al número ${contact.number}`}
                 >
                   Llamar
@@ -71,7 +71,7 @@ export function TableData({ records }: { records: TRecord[] }) {
                   href={`${contact.WhatsApp}?text=${whatsappInitialMessage(record)}`}
                   target='_blank'
                   rel='noreferrer'
-                  className='inline-flex items-center justify-center rounded-full bg-emerald-600 px-2 py-1 text-[11px] sm:text-xs font-medium text-white hover:bg-emerald-700 transition-colors'
+                  className='inline-flex items-center justify-center rounded-full bg-emerald-600 px-3 py-1.5 text-[11px] text-xs font-medium text-white hover:bg-emerald-700 transition-colors'
                   aria-label='Abrir chat de WhatsApp'
                 >
                   WhatsApp
