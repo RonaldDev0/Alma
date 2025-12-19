@@ -20,18 +20,21 @@ export default function Hero() {
 
       <div className='absolute inset-0 bg-black/45' />
 
-      <div className='relative z-10 text-center text-white max-w-2xl flex flex-col gap-3 md:gap-4 px-4'>
+      <div className='relative z-10 text-center text-white max-w-3xl flex flex-col gap-3 md:gap-4 px-4 mt-14'>
         <h1 className='text-2xl md:text-4xl font-bold'>
-          Mantenimiento de impresoras para Empresas y Hogar
+          Mantenimiento y venta de impresoras y computadores para empresas y hogares
         </h1>
-        <span className='text-sm md:text-lg'>
-          Atendemos en Bogotá, Chia, Cajica, Funza, Madrid, Mosquera y alrededores.
+        <span className='text-sm md:text-lg opacity-80'>
+          Servicio express, atendemos en Bogotá, Chia, Cajica, Funza, Madrid, Mosquera y alrededores.
         </span>
         <Link target='_blank' href={ws}>
           <Button className='bg-green-600 hover:bg-green-700 text-white text-sm md:text-base'>
             Agendar servicio
           </Button>
         </Link>
+        <div className='opacity-75 mt-4'>
+          <p>Oficina principal - <span>Carrear 10 #20 - 39</span></p>
+        </div>
       </div>
     </section>
   )
