@@ -182,8 +182,13 @@ export function EditDialog({ record, trigger }: EditDialogProps) {
                 <SelectValue placeholder='Ej: Repuestos, Suministros' />
               </SelectTrigger>
               <SelectContent>
+                <SelectItem value='ACCESORIOS'>Accesorios</SelectItem>
+                <SelectItem value='COMUNICACION'>Comunicación</SelectItem>
+                <SelectItem value='COMPUTADOR'>Computador</SelectItem>
+                <SelectItem value='IMPRESORA'>Impresora</SelectItem>
                 <SelectItem value='REPUESTOS'>Repuestos</SelectItem>
                 <SelectItem value='SUMINISTROS'>Suministros</SelectItem>
+                <SelectItem value='OTROS'>Otros</SelectItem>
               </SelectContent>
             </Select>
           </div>

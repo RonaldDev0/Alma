@@ -90,9 +90,13 @@ export function Data({ records, isConfig = false }: IProps) {
                 <SelectValue placeholder='Categoría' />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value='category'>Todas</SelectItem>
+                <SelectItem value='ACCESORIOS'>Accesorios</SelectItem>
+                <SelectItem value='COMUNICACION'>Comunicación</SelectItem>
+                <SelectItem value='COMPUTADOR'>Computador</SelectItem>
+                <SelectItem value='IMPRESORA'>Impresora</SelectItem>
                 <SelectItem value='REPUESTOS'>Repuestos</SelectItem>
                 <SelectItem value='SUMINISTROS'>Suministros</SelectItem>
+                <SelectItem value='OTROS'>Otros</SelectItem>
               </SelectContent>
             </Select>
             {(input || (selectedCategory && selectedCategory !== 'category')) && (
