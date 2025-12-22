@@ -41,7 +41,7 @@ export default function Navbar() {
                   className='h-14 w-14 rounded-lg'
                 />
                 <div className='flex flex-col justify-center'>
-                  <span className='font-bold text-xl'>CT Enter</span>
+                  <span className='font-bold text-xl'>Enter</span>
                   <span className='text-sm text-gray-700 dark:text-gray-400'>
                     <span className='text-red-800 text-lg font-bold'>C</span>
                     omercial {' '}

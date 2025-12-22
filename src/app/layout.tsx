@@ -13,8 +13,11 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Enter',
-  description: 'Lista de precios',
+  title: {
+    default: 'Enter CT',
+    template: '%s | Enter CT'
+  },
+  description: 'Servicios especializados de venta, reparación y mantenimiento de impresoras y computadores a domicilio. Atención rápida y profesional en Bogotá.',
   manifest: '/manifest.json',
   icons: {
     icon: [
