@@ -9,6 +9,7 @@ import {
   TableRow
 } from '@/components/ui/table'
 import { ContactDialog } from './contact-dialog'
+import number from '../../consts'
 
 export type TRecord = {
   id: number
@@ -25,8 +26,8 @@ type IContact = {
 }
 
 const contact: IContact = {
-  WhatsApp: 'https://wa.me/573222166288',
-  number: '3222166288'
+  WhatsApp: 'https://wa.me/57' + number,
+  number
 }
 
 function whatsappInitialMessage({ reference, brand }: TRecord) {

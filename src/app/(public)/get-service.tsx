@@ -13,11 +13,12 @@ import {
   SelectValue
 } from '@/components/ui/select'
 import Link from 'next/link'
+import number from '../consts'
 
 export default function GetService() {
   const [data, setData] = useState()
 
-  const link = `https://wa.me/573222166288?text=${encodeURIComponent(
+  const link = `https://wa.me/57${number}?text=${encodeURIComponent(
     `Hola, vi tu pagina y estoy interesado en solicitar un servicio ${data !== 'Otro' ? `para ${data}` : ''}`
   )}`
 

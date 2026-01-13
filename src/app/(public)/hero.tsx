@@ -1,12 +1,12 @@
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
+import number from '../consts'
 
 export default function Hero() {
-  const phoneNumber = '573132006606'
   const message = 'Hola, vi la página y estoy interesado en agendar un servicio. ¿Podrías brindarme más información?'
 
-  const ws = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+  const ws = `https://wa.me/57${number}?text=${encodeURIComponent(message)}`
 
   return (
     <section className='relative w-screen md:w-[98.9vw] h-[35vh] md:h-[60vh] mx-auto flex items-center justify-center overflow-hidden'>
