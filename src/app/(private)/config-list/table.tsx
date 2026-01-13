@@ -16,7 +16,7 @@ export type TRecord = {
   reference: string
   brand: string
   stock: number
-  family: string
+  family: 'REPUESTOS' | 'SUMINISTROS'
 }
 
 export function TableData({ records }: { records: TRecord[] }) {
