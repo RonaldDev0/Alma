@@ -1,7 +1,8 @@
 import { createClient } from '@/lib/supabase/server'
 import { ListClient } from './list-client'
-import { type TRecord } from './table'
+import type { TRecord } from './table'
 import { InstallPrompt } from '@/components/install-prompt'
+import Image from 'next/image'
 
 export default async function List() {
   const supabase = await createClient()
@@ -20,6 +21,14 @@ export default async function List() {
   return (
     <main className='py-4 px-2'>
       <InstallPrompt />
+      <div className='w-full flex justify-center mt-20'>
+        <Image
+          src='/qr-enterct3.png'
+          width='350'
+          height='100'
+          alt='qr enterct'
+        />
+      </div>
       <section className='mx-auto max-w-full lg:max-w-6xl'>
         <div className='overflow-x-auto'>
           <ListClient initialRecords={initialRecords} />

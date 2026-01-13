@@ -82,7 +82,8 @@ export function Data({ records, isConfig = false }: IProps) {
           </div>
           <div className='flex items-center gap-2'>
             <Select
-              value={selectedCategory || 'category'}
+              key={selectedCategory === 'category' ? 'reset' : selectedCategory}
+              value={selectedCategory === 'category' ? undefined : selectedCategory}
               onValueChange={(category: any) => setCategory(category)}
             >
               <SelectTrigger className='w-[160px]'>
