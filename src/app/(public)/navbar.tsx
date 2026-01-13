@@ -72,15 +72,18 @@ export default function Navbar() {
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                      <Link href='#privacy'>
+                      <Link href='/#privacy'>
                         Privacidad
                       </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                      <Link href='tel:3132006606' target='_blank'>
-                        <Phone />
+                      <Link href='tel:3222166288' target='_blank'>
+                        <div className='flex items-center gap-2'>
+                          <Phone />
+                          <span> LLama ya al 3222166288</span>
+                        </div>
                       </Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
@@ -90,8 +93,8 @@ export default function Navbar() {
 
             {/* Right items */}
             <div className='hidden md:flex justify-center items-center'>
-              <Link target='_blank' href='https://wa.me/573132006606?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20estoy%20interesado.%20%C2%BFPodr%C3%ADas%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F' className='bg-black text-white dark:bg-white dark:text-black py-2 px-4 rounded-lg mr-2'>
-                Contacto
+              <Link target='_blank' href='https://wa.me/573222166288?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20estoy%20interesado.%20%C2%BFPodr%C3%ADas%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F' className='bg-black text-white dark:bg-white dark:text-black py-2 px-4 rounded-lg mr-2'>
+                Chatea con nosotros
               </Link>
               <ThemeToggle />
             </div>
@@ -130,18 +133,18 @@ export default function Navbar() {
                         Productos
                       </Link>
                       <Link
-                        href='#privacy'
+                        href='/#privacy'
                         className='py-2 font-medium transition-colors hover:text-foreground/80'
                         onClick={() => setIsOpen(false)}
                       >
                         Privacidad
                       </Link>
                       <Link
-                        href='https://wa.me/573132006606?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20estoy%20interesado.%20%C2%BFPodr%C3%ADas%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F'
+                        href='https://wa.me/573222166288?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20estoy%20interesado.%20%C2%BFPodr%C3%ADas%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F'
                         className='py-2 font-medium transition-colors hover:text-foreground/80'
                         onClick={() => setIsOpen(false)}
                       >
-                        Contacto
+                        Chatea con nosotros
                       </Link>
                     </div>
                   </div>

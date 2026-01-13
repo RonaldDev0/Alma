@@ -12,7 +12,7 @@ const data: IData[] = [
       },
       {
         subtitle: 'Rapidez:',
-        text: 'Soluciones para tu impresora en casa.'
+        text: 'Soluciones para su impresora en casa.'
       },
       {
         subtitle: 'Confianza:',
@@ -31,7 +31,7 @@ const data: IData[] = [
       },
       {
         subtitle: 'Abastecimiento:',
-        text: 'Suministros a tiempo para que tu negocio siga funcionando.'
+        text: 'Suministros a tiempo para que su negocio siga funcionando.'
       },
       {
         subtitle: 'Fiabilidad:',

@@ -12,10 +12,10 @@ export default function Privacy() {
 
       <p className='text-sm leading-relaxed text-muted-foreground'>
         En <strong>Comercial Tecnológica</strong>, nos comprometemos a proteger y
-        respetar tu privacidad. Esta Política de Privacidad describe cómo
+        respetar su privacidad. Esta Política de Privacidad describe cómo
         recopilamos, utilizamos y protegemos la información personal que nos
         proporcionas, ya sea a través de nuestro sitio web, correo electrónico,
-        teléfono u otros medios, así como la manera en que puedes ejercer control
+        teléfono u otros medios, así como la manera en que usted puede ejercer control
         sobre dicha información.
       </p>
 
@@ -33,7 +33,7 @@ export default function Privacy() {
           </li>
           <li>
             <strong>Información de equipos:</strong> datos técnicos de los
-            equipos de impresión que posees o utilizas para ofrecer servicios de
+            equipos de impresión que posee o utiliza para ofrecer servicios de
             mantenimiento y suministros.
           </li>
           <li>
@@ -48,13 +48,13 @@ export default function Privacy() {
         <h2 className='text-lg font-semibold'>Uso de la información</h2>
         <ul className='list-disc pl-5 space-y-2 text-sm text-muted-foreground'>
           <li>Proporcionar y mejorar nuestros productos y servicios.</li>
-          <li>Procesar solicitudes y gestionar tu cuenta.</li>
+          <li>Procesar solicitudes y gestionar su cuenta.</li>
           <li>
-            Comunicarnos contigo sobre productos, servicios, actualizaciones y
+            Comunicarnos con usted sobre productos, servicios, actualizaciones y
             cambios en nuestras políticas.
           </li>
           <li>
-            Personalizar tu experiencia y ofrecer contenido relevante.
+            Personalizar su experiencia y ofrecer contenido relevante.
           </li>
           <li>
             Cumplir con obligaciones legales y resolver disputas.
@@ -66,7 +66,7 @@ export default function Privacy() {
         <h2 className='text-lg font-semibold'>Compartición de información</h2>
         <ul className='list-disc pl-5 space-y-2 text-sm text-muted-foreground'>
           <li>
-            Podemos compartir tu información con proveedores de servicios
+            Podemos compartir su información con proveedores de servicios
             externos, como procesadores de pago, servicios de envío y soporte
             técnico.
           </li>
@@ -82,16 +82,16 @@ export default function Privacy() {
         <h2 className='text-lg font-semibold'>Seguridad de la información</h2>
         <p className='text-sm text-muted-foreground leading-relaxed'>
           Implementamos medidas técnicas y organizativas adecuadas para proteger
-          tu información personal contra accesos no autorizados, divulgación,
+          su información personal contra accesos no autorizados, divulgación,
           alteración o destrucción.
         </p>
       </section>
 
       <section className='space-y-3'>
-        <h2 className='text-lg font-semibold'>Tus derechos</h2>
+        <h2 className='text-lg font-semibold'>Sus derechos</h2>
         <p className='text-sm text-muted-foreground leading-relaxed'>
-          Tienes derecho a acceder, corregir, actualizar o eliminar tu
-          información personal en cualquier momento. También puedes optar por no
+          Usted tiene derecho a acceder, corregir, actualizar o eliminar su
+          información personal en cualquier momento. También puede optar por no
           recibir comunicaciones de marketing. Para ejercer estos derechos o
           resolver cualquier duda, contáctanos a través de los medios indicados
           al final de este documento.
@@ -104,8 +104,8 @@ export default function Privacy() {
         </h2>
         <p className='text-sm text-muted-foreground leading-relaxed'>
           Podemos actualizar esta Política de Privacidad periódicamente para
-          reflejar cambios en nuestras prácticas. Te recomendamos revisarla con
-          regularidad para mantenerte informado sobre cómo protegemos tu
+          reflejar cambios en nuestras prácticas. Le recomendamos revisarla con
+          regularidad para mantenerse informado sobre cómo protegemos su
           información.
         </p>
       </section>
@@ -113,11 +113,12 @@ export default function Privacy() {
       <section className='space-y-3'>
         <h2 className='text-lg font-semibold'>Contacto</h2>
         <p className='text-sm text-muted-foreground leading-relaxed'>
-          Si tienes preguntas, comentarios o inquietudes sobre esta Política de
-          Privacidad, o deseas ejercer tus derechos, puedes ponerte en contacto
+          Si tiene preguntas, comentarios o inquietudes sobre esta Política de
+          Privacidad, o desea ejercer sus derechos, puede ponerse en contacto
           con nosotros a través del correo
         </p>
-        <p>makrosoftsas@gmail.com</p>
+        <p>ventas@enterct.com</p>
+        <p>soporte@enterct.com</p>
       </section>
     </section>
   )

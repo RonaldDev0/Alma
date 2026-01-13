@@ -17,8 +17,8 @@ import Link from 'next/link'
 export default function GetService() {
   const [data, setData] = useState()
 
-  const link = `https://wa.me/573132006606?text=${encodeURIComponent(
-    `Hola, vi tu pagina y estoy interesado en solicitar un servicio para ${data}`
+  const link = `https://wa.me/573222166288?text=${encodeURIComponent(
+    `Hola, vi tu pagina y estoy interesado en solicitar un servicio ${data !== 'Otro' ? `para ${data}` : ''}`
   )}`
 
   return (
@@ -30,7 +30,7 @@ export default function GetService() {
       <p className='max-w-full md:max-w-2xl px-4 opacity-75'>
         Ofrecemos servicios de reparación y mantenimiento de impresoras y computadores
         directamente en tu empresa y hogar. Nuestro equipo de técnicos ofrece
-        un servicio rápido.
+        un servicio rápidoy eficiente.
       </p>
 
       <div className='my-8 flex flex-col md:flex-row gap-4 md:gap-8'>
@@ -47,6 +47,7 @@ export default function GetService() {
               <SelectItem value='Funza'>Funza</SelectItem>
               <SelectItem value='Madrid'>Madrid</SelectItem>
               <SelectItem value='Mosquera'>Mosquera</SelectItem>
+              <SelectItem value='Otro'>Otro</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
@@ -65,7 +66,7 @@ export default function GetService() {
       </div>
 
       <p className='max-w-full md:max-w-2xl px-4 opacity-75'>
-        Arreglo de impresoras y computadores a domicilio en Bogotá, Chia, Cajica, Funza, Madrid, Mosquera y alrededores.
+        Arreglo de impresoras y computadores a nivel nacional.
         <span className='block font-bold mt-2'>Soluciones rápidas.</span>
       </p>
     </section>
