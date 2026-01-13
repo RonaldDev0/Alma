@@ -49,7 +49,7 @@ export async function updateSession(request: NextRequest) {
   }
 
   // Only allow access to admin
-  const adminIds = ['4e02a6a0-7961-4844-91e6-ce788f5005c7', '8fa9c935-5756-4854-8fea-8470457cd6b9']
+  const adminIds = ['4e02a6a0-7961-4844-91e6-ce788f5005c7', '2e49472f-0743-483d-bba1-fc6f00fffc64']
 
   if (!adminIds.includes(user?.id ?? '') && !isPublicRoute) {
     return NextResponse.rewrite(new URL('/not-found', request.url))
