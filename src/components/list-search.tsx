@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import { Input } from '@/components/ui/input'
 import { TableData, type TRecord } from '@/app/(public)/list/table'
 import { TableData as TableDataConfig } from '@/app/(private)/config-list/table'
@@ -24,6 +24,7 @@ export function Data({ records, isConfig = false }: IProps) {
   const [input, setInput] = useState('')
   const [debouncedInput, setDebouncedInput] = useState('')
   const [selectedCategory, setCategory] = useState()
+  const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -35,6 +36,23 @@ export function Data({ records, isConfig = false }: IProps) {
 
   const handleChange = ({ target: { value } }: any) => {
     setInput(value)
+  }
+
+  const handleFocus = () => {
+    if (inputRef.current) {
+      const inputRect = inputRef.current.getBoundingClientRect()
+      const navbarHeight = 64 // h-16 = 64px
+      const offset = 20 // Margen adicional para que quede cerca del navbar
+      const targetScroll = window.scrollY + inputRect.top - navbarHeight - offset
+      
+      window.scrollTo({ top: targetScroll, behavior: 'smooth' })
+    }
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      inputRef.current?.blur()
+    }
   }
 
   const filteredData = useMemo(() => {
@@ -66,9 +84,12 @@ export function Data({ records, isConfig = false }: IProps) {
           <div className='relative flex-1'>
             <Search className='absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground' />
             <Input
+              ref={inputRef}
               placeholder='Buscar por referencia o marca...'
               value={input}
               onChange={handleChange}
+              onFocus={handleFocus}
+              onKeyDown={handleKeyDown}
               className={`pl-9 ${input && 'pr-9'}`}
             />
             {input && (

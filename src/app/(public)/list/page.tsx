@@ -19,9 +19,9 @@ export default async function List() {
   const initialRecords = (data ?? []) as TRecord[]
 
   return (
-    <main className='py-4 px-2'>
+    <main className='px-2'>
       <InstallPrompt />
-      <div className='w-full flex justify-center mt-20'>
+      <div className='w-full flex justify-center mt-6'>
         <Image
           src='/qr-enterct3.png'
           width='350'
