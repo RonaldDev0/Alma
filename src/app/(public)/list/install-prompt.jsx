@@ -1,5 +1,8 @@
 'use client'
 import { useEffect, useState } from 'react'
+import { Card } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { X } from 'lucide-react'
 
 export function InstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState(null)
@@ -30,26 +33,27 @@ export function InstallPrompt() {
   if (!visible) return null
 
   return (
-    <div className='fixed bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:top-20 md:translate-x-0 w-[90%] max-w-sm bg-white shadow-lg rounded-xl p-4 z-50 animate-slideUp'>
-      <div className='flex items-center gap-3'>
-        <span className='flex-1 text-sm font-medium'>
-          Instala esta aplicación
-        </span>
+    <Card className='fixed bottom-4 left-1/2 -translate-x-1/2 md:bottom-auto md:left-auto md:right-4 md:top-20 md:translate-x-0 w-[90%] max-w-md z-50 animate-slideUp p-4 flex items-center flex-row'>
+      <p className='text-sm flex-1'>
+        Mantenga actualizada su lista de precios.
+        <span className='ml-1 font-bold'>Instale esta aplicación</span>
+      </p>
 
-        <button
-          onClick={handleInstall}
-          className='bg-blue-600 text-white text-sm px-3 py-2 rounded-lg hover:bg-blue-700 transition'
-        >
+      <div className='flex justify-center items-center'>
+        <Button onClick={handleInstall}>
           Instalar
-        </button>
+        </Button>
 
-        <button
+        <Button
           onClick={() => setVisible(false)}
-          className='text-gray-500 hover:text-gray-700 text-lg leading-none'
+          variant='ghost'
+          size='sm'
+          className='p-0'
+          aria-label='Cerrar'
         >
-          ✕
-        </button>
+          <X />
+        </Button>
       </div>
-    </div>
+    </Card>
   )
 }
