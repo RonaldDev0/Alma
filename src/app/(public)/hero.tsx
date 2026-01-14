@@ -26,15 +26,13 @@ export default function Hero() {
       />
 
       <div className='absolute inset-0 z-0 pointer-events-none'>
-        {bannerTexts.map((item, index) => (
-          <div key={index} className={item.position}>
+        {bannerTexts.map(({ position, text }, index) => (
+          <div key={index} className={position}>
             <span 
-              className='text-white/40 md:text-white/55 text-2xl sm:text-3xl md:text-6xl lg:text-8xl font-black tracking-tight select-none block leading-none'
-              style={{
-                textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2), -1px -1px 2px rgba(0, 0, 0, 0.2), 1px -1px 2px rgba(0, 0, 0, 0.2), -1px 1px 2px rgba(0, 0, 0, 0.2)'
-              }}
+              className='text-white/40 text-2xl sm:text-3xl md:text-6xl lg:text-8xl font-black tracking-tight select-none block leading-none'
+              style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)' }}
             >
-              {item.text}
+              {text}
             </span>
           </div>
         ))}
