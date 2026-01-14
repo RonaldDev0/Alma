@@ -8,8 +8,15 @@ export default function Hero() {
 
   const ws = `https://wa.me/57${number}?text=${encodeURIComponent(message)}`
 
+  const bannerTexts = [
+    { text: 'Suministros', position: 'absolute top-2 left-2 md:top-4 md:left-6' },
+    { text: 'Repuestos', position: 'absolute top-2 right-2 md:top-4 md:right-6' },
+    { text: 'Toners', position: 'absolute bottom-2 left-2 md:bottom-4 md:left-6' },
+    { text: 'Tintas', position: 'absolute bottom-2 right-2 md:bottom-4 md:right-6' }
+  ]
+
   return (
-    <section className='relative w-screen md:w-[98.9vw] h-[35vh] md:h-[60vh] mx-auto flex items-center justify-center overflow-hidden'>
+    <section className='relative w-screen md:w-[98.9vw] h-[50vh] md:h-[70vh] min-h-[400px] md:min-h-[600px] mx-auto flex items-center justify-center overflow-hidden'>
       <Image
         src='/hero-1.jpg'
         alt='hero'
@@ -18,34 +25,43 @@ export default function Hero() {
         className='object-cover object-center'
       />
 
-      <div className='absolute inset-0 bg-black/45'>
-        <div className='absolute top-4 left-4 md:top-6 md:left-8 flex flex-wrap gap-2 md:gap-3'>
-          {['Suministros', 'Repuestos', 'Toners', 'Tintas'].map((item, index) => (
-            <span
-              key={index}
-              className='inline-block px-3 md:px-4 py-1.5 md:py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-xs md:text-sm font-semibold shadow-lg hover:bg-white/20 transition-all duration-300'
+      <div className='absolute inset-0 z-0 pointer-events-none'>
+        {bannerTexts.map((item, index) => (
+          <div key={index} className={item.position}>
+            <span 
+              className='text-white/40 md:text-white/55 text-2xl sm:text-3xl md:text-6xl lg:text-8xl font-black tracking-tight select-none block leading-none'
+              style={{
+                textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2), -1px -1px 2px rgba(0, 0, 0, 0.2), 1px -1px 2px rgba(0, 0, 0, 0.2), -1px 1px 2px rgba(0, 0, 0, 0.2)'
+              }}
             >
-              {item}
+              {item.text}
             </span>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
-      <div className='relative z-10 text-center text-white max-w-3xl flex flex-col gap-3 md:gap-4 px-4 mt-14'>
-        <h1 className='text-2xl md:text-4xl font-bold'>
+      <div className='absolute inset-0 bg-linear-to-b bg-black/45' />
+
+      <div className='relative z-10 text-center text-white max-w-4xl mx-auto flex flex-col gap-4 md:gap-6 px-4 sm:px-6 md:px-8 py-8 md:pt-24 md:pb-0'>
+        <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight md:leading-tight drop-shadow-lg'>
           Mantenimiento y venta de impresoras y computadores para empresas y hogares
         </h1>
-        <span className='text-sm md:text-lg opacity-80'>
+        <p className='text-sm sm:text-base md:text-lg lg:text-xl opacity-90 leading-relaxed max-w-2xl mx-auto drop-shadow-md'>
           Despachamos a todo Colombia. Servicio técnico a domicilio en Bogotá, Chía, Cajicá, Funza, Madrid y Mosquera.
-        </span>
-        <Link target='_blank' href={ws}>
-          <Button className='bg-green-600 hover:bg-green-700 text-white text-sm md:text-base'>
-            Agendar servicio
-          </Button>
-        </Link>
-        <div className='opacity-75 mt-4 space-y-1'>
-          <p className='text-xs md:text-sm'>Puntos de atencion:</p>
-          <div className='flex flex-col gap-1 text-xs md:text-sm'>
+        </p>
+        <div className='flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 pt-2'>
+          <Link target='_blank' href={ws} className='w-full sm:w-auto'>
+            <Button 
+              size='lg'
+              className='w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-sm md:text-base px-8 md:px-10 h-12 md:h-14 shadow-lg hover:shadow-xl transition-all duration-200 font-semibold'
+            >
+              Agendar servicio
+            </Button>
+          </Link>
+        </div>
+        <div className='opacity-80 mt-4 md:mt-6 space-y-2 text-xs sm:text-sm md:text-base'>
+          <p className='font-semibold'>Puntos de atención:</p>
+          <div className='flex flex-col gap-1'>
             <p>Carrera 10 #20 - 39</p>
             <p>Carrera 29 #39 - 47</p>
           </div>
