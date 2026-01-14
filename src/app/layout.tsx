@@ -41,6 +41,17 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html lang='en'>
       <head>
+        <meta property='twitter:card' content='summary_large_image' />
+        <meta property='twitter:image' content='/preview.png' />
+        <meta property='twitter:title' content='Enter CT - Servicios de Impresoras y Computadores' />
+        <meta property='twitter:description' content='Servicios especializados de venta, reparación y mantenimiento de impresoras y computadores a domicilio. Atención rápida y profesional en Bogotá y toda Colombia.' />
+
+        <meta property='og:type' content='website' />
+        <meta property='og:title' content='Enter CT - Servicios de Impresoras y Computadores' />
+        <meta property='og:description' content='Servicios especializados de venta, reparación y mantenimiento de impresoras y computadores a domicilio. Atención rápida y profesional en Bogotá y toda Colombia.' />
+        <meta property='og:image' content='/preview.png' />
+        <meta property='og:site_name' content='Enter CT' />
+
         <link rel='manifest' href='/manifest.json' />
         <link rel='apple-touch-icon' href='/icon-192x192.png' />
         <script
