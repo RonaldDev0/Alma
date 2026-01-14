@@ -30,7 +30,7 @@ export function InstallPrompt() {
   if (!visible) return null
 
   return (
-    <div className='fixed bottom-4 md:bottom-auto md:top-20 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-white shadow-lg rounded-xl p-4 z-50 animate-slideUp'>
+    <div className='fixed bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:top-20 md:translate-x-0 w-[90%] max-w-sm bg-white shadow-lg rounded-xl p-4 z-50 animate-slideUp'>
       <div className='flex items-center gap-3'>
         <span className='flex-1 text-sm font-medium'>
           Instala esta aplicación

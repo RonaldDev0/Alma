@@ -1,7 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { ListClient } from './list-client'
 import type { TRecord } from './table'
-import { InstallPrompt } from '@/components/install-prompt'
+import { InstallPrompt } from './install-prompt'
 import Image from 'next/image'
 
 export default async function List() {

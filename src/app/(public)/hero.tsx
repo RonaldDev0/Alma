@@ -36,7 +36,7 @@ export default function Hero() {
           Mantenimiento y venta de impresoras y computadores para empresas y hogares
         </h1>
         <span className='text-sm md:text-lg opacity-80'>
-          Servicio express, atendemos a nivel nacional.
+          Despachamos a todo Colombia. Servicio técnico a domicilio en Bogotá, Chía, Cajicá, Funza, Madrid y Mosquera.
         </span>
         <Link target='_blank' href={ws}>
           <Button className='bg-green-600 hover:bg-green-700 text-white text-sm md:text-base'>
@@ -44,7 +44,7 @@ export default function Hero() {
           </Button>
         </Link>
         <div className='opacity-75 mt-4 space-y-1'>
-          <p className='text-xs md:text-sm'>Ubicaciones:</p>
+          <p className='text-xs md:text-sm'>Puntos de atencion:</p>
           <div className='flex flex-col gap-1 text-xs md:text-sm'>
             <p>Carrera 10 #20 - 39</p>
             <p>Carrera 29 #39 - 47</p>
