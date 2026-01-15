@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     images: [
       {
-        url: '/preview.png',
+        url: 'https://enterct.com/preview.png',
         width: 1200,
         height: 630,
         alt: 'Enter CT - Servicios de Impresoras y Computadores'
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Enter CT - Servicios de Impresoras y Computadores',
     description: 'Servicios especializados de venta, reparación y mantenimiento de impresoras y computadores a domicilio. Atención rápida y profesional en Bogotá y toda Colombia.',
-    images: ['/preview.png']
+    images: ['https://enterct.com/preview.png']
   }
 }
 
