@@ -16,12 +16,27 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE || 'https://enterct.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+
   title: {
-    default: 'Enter CT',
+    default: 'Reparación de Impresoras y Computadores en Bogotá | Enter CT',
     template: '%s | Enter CT'
   },
-  description: 'Servicios especializados de venta, reparación y mantenimiento de impresoras y computadores a domicilio. Atención rápida y profesional en Bogotá.',
+
+  description:
+    'Reparación, mantenimiento y venta de impresoras y computadores en Bogotá. Servicio técnico a domicilio, rápido y garantizado. ¡Agenda hoy con Enter CT!',
+
+  keywords: [
+    'reparación de impresoras Bogotá',
+    'servicio técnico impresoras',
+    'mantenimiento de computadores Bogotá',
+    'técnico de impresoras a domicilio',
+    'venta de impresoras',
+    'soporte técnico computadores',
+    'Enter CT'
+  ],
+
   manifest: '/manifest.json',
+
   icons: {
     icon: [
       { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
@@ -31,27 +46,57 @@ export const metadata: Metadata = {
       { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' }
     ]
   },
+
   openGraph: {
     type: 'website',
     siteName: 'Enter CT',
-    title: 'Enter CT - Servicios de Impresoras y Computadores',
-    description: 'Servicios especializados de venta, reparación y mantenimiento de impresoras y computadores a domicilio. Atención rápida y profesional en Bogotá y toda Colombia.',
+    title: 'Reparación de Impresoras y Computadores en Bogotá | Enter CT',
+    description:
+      'Servicio técnico profesional de impresoras y computadores a domicilio en Bogotá. Reparación, mantenimiento y venta con garantía.',
     url: siteUrl,
+    locale: 'es_CO',
     images: [
       {
         url: 'https://enterct.com/preview.png',
         width: 1200,
         height: 630,
-        alt: 'Enter CT - Servicios de Impresoras y Computadores'
+        alt: 'Servicio técnico de impresoras y computadores en Bogotá - Enter CT'
       }
     ]
   },
+
   twitter: {
     card: 'summary_large_image',
-    title: 'Enter CT - Servicios de Impresoras y Computadores',
-    description: 'Servicios especializados de venta, reparación y mantenimiento de impresoras y computadores a domicilio. Atención rápida y profesional en Bogotá y toda Colombia.',
+    title: 'Servicio Técnico de Impresoras y Computadores en Bogotá | Enter CT',
+    description:
+      'Reparación y mantenimiento de impresoras y computadores a domicilio en Bogotá. Atención rápida y garantizada.',
     images: ['https://enterct.com/preview.png']
   }
+}
+
+const schemaLocalBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  'name': 'Enter CT',
+  'image': 'https://enterct.com/preview.png',
+  'url': 'https://enterct.com',
+  'telephone': '+573222166288',
+  'address': {
+    '@type': 'PostalAddress',
+    'addressLocality': 'Bogotá',
+    'addressCountry': 'CO'
+  },
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Bogotá'
+  },
+  'description':
+    'Servicio técnico de impresoras y computadores en Bogotá. Reparación, mantenimiento y venta a domicilio.',
+  'sameAs': [
+    'https://www.facebook.com/MakrosoftColombia',
+    'https://www.instagram.com/makrosoftdecolombia/',
+    'https://wa.me/573209313050'
+  ]
 }
 
 export const viewport: Viewport = {
@@ -84,6 +129,12 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
                 });
               }
             `
+          }}
+        />
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schemaLocalBusiness)
           }}
         />
       </head>
