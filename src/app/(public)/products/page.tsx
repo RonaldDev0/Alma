@@ -78,7 +78,7 @@ export default function Products() {
 
       <section className='max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
         {mockProducts.map(product => (
-          <Link href={process.env.NEXT_PUBLIC_SITE + 'products/' + product.id} key={product.id}>
+          <Link href={`/products/${product.id}`} key={product.id}>
             <Card className='h-full overflow-hidden border-slate-200'>
               <CardContent className='p-0'>
                 <div className='relative w-full bg-slate-100'>

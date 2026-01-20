@@ -1,5 +1,15 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+
+export const metadata: Metadata = {
+  title: 'Página no encontrada (404)',
+  description: 'La página que buscas no existe o ha sido movida. Vuelve al inicio de Enter CT para encontrar servicios de reparación de impresoras y computadores en Bogotá.',
+  robots: {
+    index: false,
+    follow: true
+  }
+}
 
 export default function NotFoundPage() {
   return (

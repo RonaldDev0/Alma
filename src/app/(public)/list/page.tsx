@@ -45,7 +45,13 @@ export default async function List() {
   return (
     <main className='px-2'>
       <InstallPrompt />
-      <div className='w-full flex justify-center mt-6'>
+      <div className='w-full flex flex-col items-center mt-6 space-y-4'>
+        <h1 className='text-2xl md:text-3xl font-bold text-center'>
+          Catálogo de Toners, Tintas y Repuestos
+        </h1>
+        <p className='text-muted-foreground text-center max-w-2xl'>
+          Encuentra suministros para impresoras HP, Epson, Brother, Samsung y más marcas. Stock disponible con envío a toda Colombia.
+        </p>
         <Image
           src='/qr-enterct3.png'
           width='350'
@@ -53,7 +59,7 @@ export default async function List() {
           alt='Código QR para acceder al catálogo de Enter CT'
         />
       </div>
-      <section className='mx-auto max-w-full lg:max-w-6xl'>
+      <section className='mx-auto max-w-full lg:max-w-6xl mt-6'>
         <div className='overflow-x-auto'>
           <ListClient initialRecords={initialRecords} />
         </div>

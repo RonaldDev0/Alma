@@ -174,13 +174,23 @@ const schemaLocalBusiness = {
 
 export const viewport: Viewport = {
   width: 'device-width',
-  initialScale: 1
+  initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#1a1a1a' }
+  ]
 }
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang='es-CO'>
       <head>
+        {/* Preconnect hints para optimizar carga de recursos externos */}
+        <link rel='preconnect' href='https://wa.me' />
+        <link rel='dns-prefetch' href='https://wa.me' />
+        <link rel='preconnect' href='https://www.google-analytics.com' />
+        <link rel='dns-prefetch' href='https://www.google-analytics.com' />
+        
         <link rel='manifest' href='/manifest.json' />
         <link rel='apple-touch-icon' href='/icon-192x192.png' />
         <script

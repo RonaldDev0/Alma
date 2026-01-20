@@ -45,7 +45,7 @@ const data: IData[] = [
     description: 'Mantenimiento para Empresas',
     keypoints: [
       {
-        subtitle: 'Eficiendia:',
+        subtitle: 'Eficiencia:',
         text: 'Mantenimiento de impresoras para un funcionamiento continuo.'
       },
       {
