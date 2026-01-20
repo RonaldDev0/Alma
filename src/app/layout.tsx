@@ -9,7 +9,8 @@ import './globals.css'
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600']
+  weight: ['300', '400', '500', '600'],
+  preload: true
 })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE || 'https://enterct.com'
@@ -76,7 +77,7 @@ export const metadata: Metadata = {
 
 const schemaLocalBusiness = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'ComputerRepair',
   'name': 'Enter CT',
   'image': 'https://enterct.com/preview.png',
   'url': 'https://enterct.com',
@@ -101,14 +102,12 @@ const schemaLocalBusiness = {
 
 export const viewport: Viewport = {
   width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false
+  initialScale: 1
 }
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang='en'>
+    <html lang='es-CO'>
       <head>
         <link rel='manifest' href='/manifest.json' />
         <link rel='apple-touch-icon' href='/icon-192x192.png' />
