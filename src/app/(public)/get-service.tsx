@@ -54,7 +54,7 @@ export default function GetService() {
         </Select>
 
         {data ? (
-          <Link href={link} target='_blank'>
+          <Link href={link} target='_blank' rel='noopener noreferrer'>
             <Button>
               Solicitar servicio
             </Button>

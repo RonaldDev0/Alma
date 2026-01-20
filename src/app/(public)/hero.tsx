@@ -19,7 +19,7 @@ export default function Hero() {
     <section className='relative w-screen md:w-[98.9vw] h-[50vh] md:h-[70vh] min-h-[400px] md:min-h-[600px] mx-auto flex items-center justify-center overflow-hidden'>
       <Image
         src='/hero-1.jpg'
-        alt='hero'
+        alt='Servicio técnico de impresoras y computadores a domicilio en Bogotá - Enter CT'
         fill
         priority
         className='object-cover object-center'
@@ -48,7 +48,7 @@ export default function Hero() {
           Despachamos a todo Colombia. Servicio técnico a domicilio en Bogotá, Chía, Cajicá, Funza, Madrid y Mosquera.
         </p>
         <div className='flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 pt-2'>
-          <Link target='_blank' href={ws} className='w-full sm:w-auto'>
+          <Link target='_blank' rel='noopener noreferrer' href={ws} className='w-full sm:w-auto'>
             <Button 
               size='lg'
               className='w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-sm md:text-base px-8 md:px-10 h-12 md:h-14 shadow-lg hover:shadow-xl transition-all duration-200 font-semibold'

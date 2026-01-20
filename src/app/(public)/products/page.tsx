@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -8,6 +9,28 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card'
+
+export const metadata: Metadata = {
+  title: 'Venta de Impresoras y Equipos de Cómputo',
+  description:
+    'Compra impresoras láser, multifuncionales, equipos de inyección de tinta y computadores. Venta con garantía y soporte técnico en Bogotá. Envíos a toda Colombia.',
+  keywords: [
+    'venta impresoras Bogotá',
+    'comprar impresora láser',
+    'multifuncional HP',
+    'impresora Epson',
+    'equipos de cómputo Colombia',
+    'impresoras para empresas',
+    'impresoras para oficina'
+  ],
+  openGraph: {
+    title: 'Venta de Impresoras y Equipos | Enter CT',
+    description:
+      'Impresoras láser, multifuncionales y equipos de cómputo con garantía. Soporte técnico incluido.',
+    url: 'https://enterct.com/products',
+    type: 'website'
+  }
+}
 
 const mockProducts = [
   {

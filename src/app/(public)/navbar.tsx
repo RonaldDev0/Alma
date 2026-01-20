@@ -36,7 +36,7 @@ export default function Navbar() {
               <Link href='/' className='flex items-center space-x-2'>
                 <Image
                   src='/icon-192x192.png'
-                  alt='Enter'
+                  alt='Enter CT - Logo de servicio técnico de impresoras'
                   width={40}
                   height={40}
                   className='h-14 w-14 rounded-lg'
@@ -80,7 +80,7 @@ export default function Navbar() {
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                      <Link href='tel:3222166288' target='_blank'>
+                      <Link href='tel:3222166288' target='_blank' rel='noopener noreferrer'>
                         <div className='flex items-center gap-2'>
                           <Phone />
                           <span> LLama ya al {number}</span>
@@ -94,12 +94,12 @@ export default function Navbar() {
 
             {/* Right items */}
             <div className='hidden md:flex justify-center items-center'>
-              <Link target='_blank' href={`https://wa.me/57${number}?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20estoy%20interesado.%20%C2%BFPodr%C3%ADas%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F`} className='bg-black text-white dark:bg-white dark:text-black py-2 px-4 rounded-lg mr-2 flex gap-4 items-center justify-center'>
+              <Link target='_blank' rel='noopener noreferrer' href={`https://wa.me/57${number}?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20estoy%20interesado.%20%C2%BFPodr%C3%ADas%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F`} className='bg-black text-white dark:bg-white dark:text-black py-2 px-4 rounded-lg mr-2 flex gap-4 items-center justify-center'>
                 <Image
                   src='/ws.webp'
                   width={30}
                   height={30}
-                  alt='WahtsApp icon'
+                  alt='Contactar por WhatsApp'
                   className='rounded-full'
                 />
                 Chatea con nosotros
@@ -149,6 +149,8 @@ export default function Navbar() {
                       </Link>
                       <Link
                         href={`https://wa.me/57${number}?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20estoy%20interesado.%20%C2%BFPodr%C3%ADas%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F`}
+                        target='_blank'
+                        rel='noopener noreferrer'
                         className='py-2 font-medium transition-colors hover:text-foreground/80'
                         onClick={() => setIsOpen(false)}
                       >

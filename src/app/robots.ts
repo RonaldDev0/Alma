@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/'
       }
     ],
-    sitemap: 'https://enterct.com//sitemap.xml',
+    sitemap: 'https://enterct.com/sitemap.xml',
     host: 'https://enterct.com'
   }
 }

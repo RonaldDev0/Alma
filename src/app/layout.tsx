@@ -78,26 +78,98 @@ export const metadata: Metadata = {
 const schemaLocalBusiness = {
   '@context': 'https://schema.org',
   '@type': 'ComputerRepair',
-  'name': 'Enter CT',
+  'name': 'Enter CT - Comercial Tecnológica',
+  'alternateName': 'Enter CT',
   'image': 'https://enterct.com/preview.png',
+  'logo': 'https://enterct.com/icon-512x512.png',
   'url': 'https://enterct.com',
   'telephone': '+573222166288',
-  'address': {
-    '@type': 'PostalAddress',
-    'addressLocality': 'Bogotá',
-    'addressCountry': 'CO'
+  'email': 'ventas@enterct.com',
+  'priceRange': '$$',
+  'currenciesAccepted': 'COP',
+  'paymentAccepted': 'Efectivo, Transferencia, Tarjeta de crédito',
+  'address': [
+    {
+      '@type': 'PostalAddress',
+      'streetAddress': 'Carrera 10 #20 - 39',
+      'addressLocality': 'Bogotá',
+      'addressRegion': 'Cundinamarca',
+      'postalCode': '111711',
+      'addressCountry': 'CO'
+    },
+    {
+      '@type': 'PostalAddress',
+      'streetAddress': 'Carrera 29 #39 - 47',
+      'addressLocality': 'Bogotá',
+      'addressRegion': 'Cundinamarca',
+      'postalCode': '111311',
+      'addressCountry': 'CO'
+    }
+  ],
+  'geo': {
+    '@type': 'GeoCoordinates',
+    'latitude': 4.6097,
+    'longitude': -74.0817
   },
-  'areaServed': {
-    '@type': 'City',
-    'name': 'Bogotá'
-  },
+  'areaServed': [
+    { '@type': 'City', 'name': 'Bogotá' },
+    { '@type': 'City', 'name': 'Chía' },
+    { '@type': 'City', 'name': 'Cajicá' },
+    { '@type': 'City', 'name': 'Funza' },
+    { '@type': 'City', 'name': 'Madrid' },
+    { '@type': 'City', 'name': 'Mosquera' }
+  ],
+  'openingHoursSpecification': [
+    {
+      '@type': 'OpeningHoursSpecification',
+      'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      'opens': '07:00',
+      'closes': '17:00'
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      'dayOfWeek': 'Saturday',
+      'opens': '09:00',
+      'closes': '14:00'
+    }
+  ],
   'description':
-    'Servicio técnico de impresoras y computadores en Bogotá. Reparación, mantenimiento y venta a domicilio.',
+    'Servicio técnico profesional de impresoras y computadores en Bogotá. Reparación, mantenimiento y venta a domicilio con garantía.',
   'sameAs': [
     'https://www.facebook.com/MakrosoftColombia',
     'https://www.instagram.com/makrosoftdecolombia/',
-    'https://wa.me/573209313050'
-  ]
+    'https://wa.me/573222166288'
+  ],
+  'hasOfferCatalog': {
+    '@type': 'OfferCatalog',
+    'name': 'Servicios de Enter CT',
+    'itemListElement': [
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'Reparación de impresoras',
+          'description': 'Servicio técnico especializado para impresoras de todas las marcas'
+        }
+      },
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'Mantenimiento de computadores',
+          'description': 'Mantenimiento preventivo y correctivo de equipos de cómputo'
+        }
+      },
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'Venta de suministros',
+          'description': 'Toners, tintas, cartuchos y repuestos para impresoras'
+        }
+      }
+    ]
+  }
 }
 
 export const viewport: Viewport = {

@@ -1,26 +1,26 @@
 import { MetadataRoute } from 'next'
 
-const siteUrl = 'https://enterct.com/'
+const siteUrl = 'https://enterct.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
-    '',
-    '/',
-    '/information',
-    '/list',
-    '/products',
-    '/home',
-    '/profile',
-    '/config-list',
-    '/forgot-password',
-    '/login',
-    '/reset-password',
-    '/signup'
+  return [
+    {
+      url: siteUrl,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1.0
+    },
+    {
+      url: `${siteUrl}/list`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9
+    },
+    {
+      url: `${siteUrl}/products`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8
+    }
   ]
-
-  return routes.map(route => ({
-    url: `${siteUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === '' ? 'weekly' : 'monthly'
-  }))
 }

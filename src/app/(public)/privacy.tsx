@@ -2,9 +2,9 @@ export default function Privacy() {
   return (
     <section id='privacy' className='mx-auto pt-24 max-w-4xl px-4 sm:px-6 md:px-8 space-y-8'>
       <header className='space-y-2'>
-        <h1 className='text-2xl font-bold tracking-tight'>
+        <h2 className='text-2xl font-bold tracking-tight'>
           Política de Privacidad
-        </h1>
+        </h2>
         <p className='text-sm text-muted-foreground'>
           Última actualización: 20 de diciembre de 2025
         </p>
@@ -20,7 +20,7 @@ export default function Privacy() {
       </p>
 
       <section className='space-y-3'>
-        <h2 className='text-lg font-semibold'>Información que recopilamos</h2>
+        <h3 className='text-lg font-semibold'>Información que recopilamos</h3>
         <ul className='list-disc pl-5 space-y-2 text-sm text-muted-foreground'>
           <li>
             <strong>Información de contacto:</strong> nombre, dirección de correo
@@ -45,7 +45,7 @@ export default function Privacy() {
       </section>
 
       <section className='space-y-3'>
-        <h2 className='text-lg font-semibold'>Uso de la información</h2>
+        <h3 className='text-lg font-semibold'>Uso de la información</h3>
         <ul className='list-disc pl-5 space-y-2 text-sm text-muted-foreground'>
           <li>Proporcionar y mejorar nuestros productos y servicios.</li>
           <li>Procesar solicitudes y gestionar su cuenta.</li>
@@ -63,7 +63,7 @@ export default function Privacy() {
       </section>
 
       <section className='space-y-3'>
-        <h2 className='text-lg font-semibold'>Compartición de información</h2>
+        <h3 className='text-lg font-semibold'>Compartición de información</h3>
         <ul className='list-disc pl-5 space-y-2 text-sm text-muted-foreground'>
           <li>
             Podemos compartir su información con proveedores de servicios
@@ -79,7 +79,7 @@ export default function Privacy() {
       </section>
 
       <section className='space-y-3'>
-        <h2 className='text-lg font-semibold'>Seguridad de la información</h2>
+        <h3 className='text-lg font-semibold'>Seguridad de la información</h3>
         <p className='text-sm text-muted-foreground leading-relaxed'>
           Implementamos medidas técnicas y organizativas adecuadas para proteger
           su información personal contra accesos no autorizados, divulgación,
@@ -88,7 +88,7 @@ export default function Privacy() {
       </section>
 
       <section className='space-y-3'>
-        <h2 className='text-lg font-semibold'>Sus derechos</h2>
+        <h3 className='text-lg font-semibold'>Sus derechos</h3>
         <p className='text-sm text-muted-foreground leading-relaxed'>
           Usted tiene derecho a acceder, corregir, actualizar o eliminar su
           información personal en cualquier momento. También puede optar por no
@@ -99,9 +99,9 @@ export default function Privacy() {
       </section>
 
       <section className='space-y-3'>
-        <h2 className='text-lg font-semibold'>
+        <h3 className='text-lg font-semibold'>
           Cambios en esta política de privacidad
-        </h2>
+        </h3>
         <p className='text-sm text-muted-foreground leading-relaxed'>
           Podemos actualizar esta Política de Privacidad periódicamente para
           reflejar cambios en nuestras prácticas. Le recomendamos revisarla con
@@ -111,7 +111,7 @@ export default function Privacy() {
       </section>
 
       <section className='space-y-3'>
-        <h2 className='text-lg font-semibold'>Contacto</h2>
+        <h3 className='text-lg font-semibold'>Contacto</h3>
         <p className='text-sm text-muted-foreground leading-relaxed'>
           Si tiene preguntas, comentarios o inquietudes sobre esta Política de
           Privacidad, o desea ejercer sus derechos, puede ponerse en contacto
