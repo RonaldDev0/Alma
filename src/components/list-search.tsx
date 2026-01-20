@@ -41,9 +41,11 @@ export function Data({ records, isConfig = false }: IProps) {
   const handleFocus = () => {
     if (inputRef.current) {
       const inputRect = inputRef.current.getBoundingClientRect()
+      const isMobile = window.innerWidth < 768 // md breakpoint
       const navbarHeight = 64 // h-16 = 64px
+      const wsBarHeight = isMobile ? 44 : 0 // Altura de la barra de WhatsApp en mobile
       const offset = 20 // Margen adicional para que quede cerca del navbar
-      const targetScroll = window.scrollY + inputRect.top - navbarHeight - offset
+      const targetScroll = window.scrollY + inputRect.top - navbarHeight - wsBarHeight - offset
       
       window.scrollTo({ top: targetScroll, behavior: 'smooth' })
     }

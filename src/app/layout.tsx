@@ -83,7 +83,7 @@ const schemaLocalBusiness = {
   'image': 'https://enterct.com/preview.png',
   'logo': 'https://enterct.com/icon-512x512.png',
   'url': 'https://enterct.com',
-  'telephone': '+573222166288',
+  'telephone': '+573183885238',
   'email': 'ventas@enterct.com',
   'priceRange': '$$',
   'currenciesAccepted': 'COP',
@@ -138,7 +138,7 @@ const schemaLocalBusiness = {
   'sameAs': [
     'https://www.facebook.com/MakrosoftColombia',
     'https://www.instagram.com/makrosoftdecolombia/',
-    'https://wa.me/573222166288'
+    'https://wa.me/573183885238'
   ],
   'hasOfferCatalog': {
     '@type': 'OfferCatalog',

@@ -28,8 +28,29 @@ export default function Navbar() {
 
   return (
     <>
-      <div className='h-[65px]' />
-      <header className='fixed top-0 left-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-backdrop-filter:bg-background/60'>
+      {/* Mobile WhatsApp Top Bar - Solo visible en mobile */}
+      <div className='md:hidden fixed top-0 left-0 z-50 w-full'>
+        <Link
+          target='_blank'
+          rel='noopener noreferrer'
+          href={`https://wa.me/57${number}?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20estoy%20interesado.%20%C2%BFPodr%C3%ADas%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F`}
+          className='flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white py-3 px-4 w-full font-semibold text-sm transition-colors'
+        >
+          <Image
+            src='/ws.webp'
+            width={28}
+            height={28}
+            alt='WhatsApp'
+            className='rounded-full bg-white p-0.5'
+          />
+          <span>¡Contáctanos ahora por WhatsApp!</span>
+        </Link>
+      </div>
+
+      {/* Spacer - Ajusta para mobile (top bar + navbar) y desktop (solo navbar) */}
+      <div className='h-[110px] md:h-[65px]' />
+      
+      <header className='fixed top-[44px] md:top-0 left-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-backdrop-filter:bg-background/60'>
         <div className='container mx-auto max-w-7xl px-4'>
           <nav className='flex h-16 items-center justify-between'>
             <div className='flex items-center'>
@@ -80,7 +101,7 @@ export default function Navbar() {
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                      <Link href='tel:3222166288' target='_blank' rel='noopener noreferrer'>
+                      <Link href={`tel:` + number} target='_blank' rel='noopener noreferrer'>
                         <div className='flex items-center gap-2'>
                           <Phone />
                           <span> LLama ya al {number}</span>
@@ -147,15 +168,7 @@ export default function Navbar() {
                       >
                         Privacidad
                       </Link>
-                      <Link
-                        href={`https://wa.me/57${number}?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20estoy%20interesado.%20%C2%BFPodr%C3%ADas%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F`}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='py-2 font-medium transition-colors hover:text-foreground/80'
-                        onClick={() => setIsOpen(false)}
-                      >
-                        Chatea con nosotros
-                      </Link>
+
                     </div>
                   </div>
                 </SheetContent>
