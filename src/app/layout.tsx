@@ -13,7 +13,7 @@ const poppins = Poppins({
   preload: true
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE || 'https://enterct.com'
+const siteUrl = 'https://enterct.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

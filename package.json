@@ -43,7 +43,7 @@
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
     "@types/web-push": "^3.6.4",
-    "baseline-browser-mapping": "^2.9.16",
+    "baseline-browser-mapping": "^2.9.17",
     "eslint": "^9.39.2",
     "eslint-config-next": "^16.1.4",
     "sharp": "^0.33.5",

@@ -104,7 +104,7 @@ export default function Navbar() {
                       <Link href={`tel:` + number} target='_blank' rel='noopener noreferrer'>
                         <div className='flex items-center gap-2'>
                           <Phone />
-                          <span> LLama ya al {number}</span>
+                          <span> LLame ya al {number}</span>
                         </div>
                       </Link>
                     </NavigationMenuLink>
@@ -123,7 +123,7 @@ export default function Navbar() {
                   alt='Contactar por WhatsApp'
                   className='rounded-full'
                 />
-                Chatea con nosotros
+                Chatee con nosotros
               </Link>
               <ThemeToggle />
             </div>

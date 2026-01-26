@@ -37,7 +37,7 @@ export default function GetService() {
       <div className='my-8 flex flex-col md:flex-row gap-4 md:gap-8'>
         <Select value={data} onValueChange={city => setData(city as any)}>
           <SelectTrigger className='w-[220px]'>
-            <SelectValue placeholder='Selecciona tu ubicación' />
+            <SelectValue placeholder='Seleccione su ubicación' />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
