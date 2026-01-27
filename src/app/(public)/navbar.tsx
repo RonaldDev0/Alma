@@ -68,7 +68,7 @@ export default function Navbar() {
                     <span className='text-red-800 text-lg font-bold'>C</span>
                     omercial {' '}
                     <span className='text-red-800 text-lg font-bold'>T</span>
-                    ecnologica
+                    ecnológica
                     </span>
                 </div>
               </Link>

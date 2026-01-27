@@ -60,8 +60,8 @@ export default function Hero() {
         <div className='opacity-80 mt-4 md:mt-6 space-y-2 text-xs sm:text-sm md:text-base'>
           <p className='font-semibold'>Puntos de atención:</p>
           <div className='flex flex-col gap-1'>
-            <p>Carrera 10 #20 - 39</p>
-            <p>Carrera 29 #39 - 47</p>
+            <p>Carrera 10 #20 - 39 local #237</p>
+            <p>Carrera 29 #39 - 47 La Soledad</p>
           </div>
         </div>
       </div>

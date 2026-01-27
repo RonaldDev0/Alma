@@ -4,6 +4,7 @@ import { ListClient } from './list-client'
 import type { TRecord } from './table'
 import { InstallPrompt } from './install-prompt'
 import Image from 'next/image'
+import number from '../../consts'
 
 export const metadata: Metadata = {
   title: 'Catálogo de Toners, Tintas y Repuestos para Impresoras',
@@ -50,7 +51,7 @@ export default async function List() {
           Catálogo de Toners, Tintas y Repuestos
         </h1>
         <p className='text-muted-foreground text-center max-w-2xl'>
-          Encuentra suministros para impresoras HP, Epson, Brother, Samsung y más marcas. Stock disponible con envío a toda Colombia.
+          Encuentre suministros para impresoras HP, Epson, Samsung y más marcas. Stock disponible con envío a toda Colombia. <span> LLame ya al {number}</span>
         </p>
         <Image
           src='/qr-enterct3.png'

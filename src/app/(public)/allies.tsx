@@ -11,7 +11,7 @@ const allies: string[] = [
   'Logitech'
 ]
 
-const duplicatedAllies = Array.from({ length: allies.length * 4 }, (_, i) => allies[i % allies.length])
+const duplicatedAllies = Array.from({ length: allies.length * 5 }, (_, i) => allies[i % allies.length])
 
 export default function Allies() {
   return (
@@ -23,7 +23,7 @@ export default function Allies() {
             Nuestros Aliados
           </h2>
           <p className='text-muted-foreground max-w-2xl mx-auto text-lg'>
-            Trabajamos con las marcas más reconocidas del mercado para ofrecerte las mejores soluciones tecnológicas
+            Trabajamos con las marcas más reconocidas del mercado para ofrecerle las mejores soluciones tecnológicas
           </p>
           <div className='w-24 h-1 bg-linear-to-r from-primary to-primary/70 mx-auto rounded-full' />
         </div>
@@ -60,7 +60,7 @@ export default function Allies() {
       <div className='container mx-auto max-w-7xl px-4'>
         <div className='text-center'>
           <p className='text-sm text-muted-foreground/80 font-medium'>
-            + de {allies.length} marcas líderes confían en nosotros
+            + de {duplicatedAllies.length} marcas líderes confían en nosotros
           </p>
         </div>
       </div>

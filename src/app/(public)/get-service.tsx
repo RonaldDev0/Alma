@@ -30,8 +30,8 @@ export default function GetService() {
 
       <p className='max-w-full md:max-w-2xl px-4 opacity-75'>
         Ofrecemos servicios de reparación y mantenimiento de impresoras y computadores
-        directamente en tu empresa y hogar. Nuestro equipo de técnicos ofrece
-        un servicio rápidoy eficiente.
+        directamente en su empresa y hogar. Nuestro equipo de técnicos ofrece
+        un servicio rápido y eficiente.
       </p>
 
       <div className='my-8 flex flex-col md:flex-row gap-4 md:gap-8'>
@@ -67,7 +67,7 @@ export default function GetService() {
       </div>
 
       <p className='max-w-full md:max-w-2xl px-4 opacity-75'>
-        Arreglo de impresoras y computadores a nivel nacional.
+        Arreglo de impresoras y computadores.
         <span className='block font-bold mt-2'>Soluciones rápidas.</span>
       </p>
     </section>
