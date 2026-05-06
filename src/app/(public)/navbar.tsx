@@ -56,21 +56,12 @@ export default function Navbar() {
             <div className='flex items-center'>
               <Link href='/' className='flex items-center space-x-2'>
                 <Image
-                  src='/icon-192x192.png'
+                  src='/new-icon.png'
                   alt='Enter CT - Logo de servicio técnico de impresoras'
-                  width={40}
-                  height={40}
-                  className='h-14 w-14 rounded-lg'
+                  width={400}
+                  height={400}
+                  className='h-40 w-44 rounded-lg'
                 />
-                <div className='flex flex-col justify-center'>
-                  <span className='font-bold text-xl'>Enter</span>
-                  <span className='text-sm text-gray-700 dark:text-gray-400'>
-                    <span className='text-red-800 text-lg font-bold'>C</span>
-                    omercial {' '}
-                    <span className='text-red-800 text-lg font-bold'>T</span>
-                    ecnológica
-                    </span>
-                </div>
               </Link>
             </div>
 
