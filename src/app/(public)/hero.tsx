@@ -51,7 +51,7 @@ export default function Hero() {
           <Link target='_blank' rel='noopener noreferrer' href={ws} className='w-full sm:w-auto'>
             <Button 
               size='lg'
-              className='w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-sm md:text-base px-8 md:px-10 h-12 md:h-14 shadow-lg hover:shadow-xl transition-all duration-200 font-semibold'
+              className='w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white text-sm md:text-base px-8 md:px-10 h-12 md:h-14 shadow-lg hover:shadow-xl transition-all duration-200 font-semibold'
             >
               Agendar servicio
             </Button>
