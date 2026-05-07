@@ -1,14 +1,19 @@
-const allies: string[] = [
-  'HP',
-  'DELL',
-  'Lenovo',
-  'Microsoft',
-  'EPSON',
-  'TOSHIBA',
-  'RICOH',
-  'ZEBRA',
-  'Apple',
-  'Logitech'
+interface IAllie {
+  name: string
+  color: string
+}
+
+const allies: IAllie[] = [
+  { name: 'HP', color: 'bg-[#0096D6]' }, // HP Blue
+  { name: 'DELL', color: 'bg-[#007DB8]' }, // Dell Blue
+  { name: 'Lenovo', color: 'bg-[#E2231A]' }, // Lenovo Red
+  { name: 'Microsoft', color: 'bg-[#7FBA00]' }, // Microsoft Green
+  { name: 'EPSON', color: 'bg-[#003399]' }, // Epson Blue
+  { name: 'TOSHIBA', color: 'bg-[#E60012]' }, // Toshiba Red
+  { name: 'RICOH', color: 'bg-[#D6001C]' }, // Ricoh Red
+  { name: 'ZEBRA', color: 'bg-black' }, // Zebra Black
+  { name: 'Apple', color: 'bg-black' }, // Apple Black
+  { name: 'Logitech', color: 'bg-[#00B8FC]' } // Logitech Cyan
 ]
 
 const duplicatedAllies = Array.from({ length: allies.length * 5 }, (_, i) => allies[i % allies.length])
@@ -40,16 +45,16 @@ export default function Allies() {
           role='marquee'
           aria-label='Marcas aliadas en movimiento continuo'
         >
-          {duplicatedAllies.map((ally, index) => (
+          {duplicatedAllies.map(({ name, color }, index) => (
             <div
-              key={`${ally}-${index}`}
+              key={`${name}-${index}`}
               className='group mx-6 shrink-0 transition-all duration-300 hover:scale-110'
             >
               <span
-                className='font-bold text-4xl md:text-5xl lg:text-6xl group-hover:drop-shadow-lg transition-all duration-300 ease-out bg-linear-to-br from-muted-foreground/60 to-muted-foreground/40 group-hover:from-primary group-hover:to-primary/70 bg-clip-text text-transparent cursor-default select-none'
-                aria-label={`Marca aliada: ${ally}`}
+                className={`font-bold text-4xl md:text-5xl lg:text-6xl group-hover:drop-shadow-lg transition-all duration-300 ease-out bg-clip-text text-transparent cursor-default select-none ${color}`}
+                aria-label={`Marca aliada: ${name}`}
               >
-                {ally}
+                {name}
               </span>
             </div>
           ))}
