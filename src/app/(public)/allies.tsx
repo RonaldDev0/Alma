@@ -1,30 +1,41 @@
-interface IAllie {
+import Image from 'next/image'
+
+interface Ally {
+  src: string
   name: string
-  color: string
+  width: number
 }
 
-const allies: IAllie[] = [
-  { name: 'HP', color: 'bg-[#0096D6]' }, // HP Blue
-  { name: 'DELL', color: 'bg-[#007DB8]' }, // Dell Blue
-  { name: 'Lenovo', color: 'bg-[#E2231A]' }, // Lenovo Red
-  { name: 'Microsoft', color: 'bg-[#7FBA00]' }, // Microsoft Green
-  { name: 'EPSON', color: 'bg-[#003399]' }, // Epson Blue
-  { name: 'TOSHIBA', color: 'bg-[#E60012]' }, // Toshiba Red
-  { name: 'RICOH', color: 'bg-[#D6001C]' }, // Ricoh Red
-  { name: 'ZEBRA', color: 'bg-black' }, // Zebra Black
-  { name: 'Apple', color: 'bg-black' }, // Apple Black
-  { name: 'Logitech', color: 'bg-[#00B8FC]' } // Logitech Cyan
+const allies: Ally[] = [
+  { src: '/allies/apple.png',     name: 'Apple',     width: 130 },
+  { src: '/allies/epson.png',     name: 'Epson',     width: 200 },
+  { src: '/allies/hp.png',        name: 'HP',        width: 100 },
+  { src: '/allies/lenovo.png',    name: 'Lenovo',    width: 200 },
+  { src: '/allies/microsoft.png', name: 'Microsoft', width: 220 },
+  { src: '/allies/ricoh.png',     name: 'Ricoh',     width: 180 },
+  { src: '/allies/toshiba.png',   name: 'Toshiba',   width: 200 },
+  { src: '/allies/zebra.png',     name: 'Zebra',     width: 180 },
 ]
 
-const duplicatedAllies = Array.from({ length: allies.length * 5 }, (_, i) => allies[i % allies.length])
+const LOGO_HEIGHT = 80
+
+const duplicatedAllies = Array.from(
+  { length: allies.length * 5 },
+  (_, i) => allies[i % allies.length]
+)
 
 export default function Allies() {
   return (
-    <section className='space-y-8 py-16 bg-linear-to-b from-background to-muted dark:to-muted/20' aria-labelledby='allies-heading'>
-      {/* Header Section */}
+    <section
+      className='space-y-8 py-16 bg-linear-to-b from-background to-muted dark:to-muted/20'
+      aria-labelledby='allies-heading'
+    >
       <div className='container mx-auto max-w-7xl px-4'>
         <div className='text-center space-y-4'>
-          <h2 id='allies-heading' className='text-3xl md:text-4xl font-bold bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent'>
+          <h2
+            id='allies-heading'
+            className='text-3xl md:text-4xl font-bold bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent'
+          >
             Nuestros Aliados
           </h2>
           <p className='text-muted-foreground max-w-2xl mx-auto text-lg'>
@@ -34,38 +45,39 @@ export default function Allies() {
         </div>
       </div>
 
-      {/* Allies Marquee */}
       <div className='relative overflow-hidden py-8'>
-        {/* Gradient overlays for smooth fade effect */}
         <div className='absolute left-0 top-0 w-32 h-full bg-linear-to-r from-background via-background/80 to-transparent z-10 pointer-events-none' />
         <div className='absolute right-0 top-0 w-32 h-full bg-linear-to-l from-background via-background/80 to-transparent z-10 pointer-events-none' />
 
         <div
-          className='flex animate-scroll-seamless whitespace-nowrap px-8 hover:paused transition-all duration-300'
+          className='flex items-center animate-scroll-seamless hover:paused'
           role='marquee'
           aria-label='Marcas aliadas en movimiento continuo'
         >
-          {duplicatedAllies.map(({ name, color }, index) => (
+          {duplicatedAllies.map(({ src, name, width }, index) => (
             <div
               key={`${name}-${index}`}
-              className='group mx-6 shrink-0 transition-all duration-300 hover:scale-110'
+              className='mx-12 shrink-0 flex items-center justify-center'
+              style={{ width, height: LOGO_HEIGHT }}
             >
-              <span
-                className={`font-bold text-4xl md:text-5xl lg:text-6xl group-hover:drop-shadow-lg transition-all duration-300 ease-out bg-clip-text text-transparent cursor-default select-none ${color}`}
-                aria-label={`Marca aliada: ${name}`}
-              >
-                {name}
-              </span>
+              <Image
+                src={src}
+                alt={`Logo de ${name}`}
+                width={width}
+                height={LOGO_HEIGHT}
+                className='object-contain max-h-full w-auto'
+                draggable={false}
+                priority={index < allies.length}
+              />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Additional info section */}
       <div className='container mx-auto max-w-7xl px-4'>
         <div className='text-center'>
           <p className='text-sm text-muted-foreground/80 font-medium'>
-            + de {duplicatedAllies.length} marcas líderes confían en nosotros
+            + de {allies.length} marcas líderes confían en nosotros
           </p>
         </div>
       </div>
