@@ -12,11 +12,12 @@ export default function Ws() {
     >
       <Image
         src='/icon/whatsapp.png'
-        width={90}
-        height={90}
+        width={80}
+        height={80}
         alt='ws-icon'
+        className=''
       />
-      <p className='bg-green-700/90 text-white p-2 rounded-xl'>
+      <p className='bg-green-700/90 text-white p-2 rounded-xl hidden md:block'>
         Asesoría para compra inmediata
       </p>
     </Link>
