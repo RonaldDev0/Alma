@@ -2,7 +2,7 @@ import Hero from './hero'
 import Allies from './allies'
 import GetService from './get-service'
 import Information from './information'
-import Privacy from './privacy'
+import Social from './social'
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <Allies />
       <GetService />
       <Information />
-      <Privacy />
+      <Social />
     </main>
   )
 }
