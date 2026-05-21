@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { Poppins } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
+import Ws from '@/components/ws'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/next'
 
@@ -221,6 +222,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       </head>
       <body className={`${poppins.className} antialiased`}>
         {children}
+        <Ws />
         <Toaster position='top-center' richColors />
         <SpeedInsights />
         <Analytics />
