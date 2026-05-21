@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import Navbar from './navbar'
 import Ws from '@/components/ws'
+import Footer from './footer'
 
 export default async function PrivateLayout({ children }: Readonly<{ children: ReactNode }>) {
 
@@ -9,6 +10,7 @@ export default async function PrivateLayout({ children }: Readonly<{ children: R
       <Navbar />
       {children}
       <Ws />
+      <Footer />
     </>
   )
 }
