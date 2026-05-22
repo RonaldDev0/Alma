@@ -26,7 +26,7 @@ export default function Hero() {
         </div>
 
         <Link
-          href='/products'
+          href='/list'
           className='flex flex-col items-center gap-2 hover:scale-105 transition-transform'
         >
           <p className='text-lg md:text-xl'>Productos</p>
@@ -41,7 +41,7 @@ export default function Hero() {
         </Link>
 
         <Link
-          href='/services'
+          href='/servicios'
           className='flex flex-col items-center gap-2 hover:scale-105 transition-transform'
         >
           <p className='text-lg md:text-xl'>Servicios</p>
