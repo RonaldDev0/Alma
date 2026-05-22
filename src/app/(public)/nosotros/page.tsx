@@ -4,7 +4,7 @@ export default function Nosotros() {
   return (
     <div className='w-full'>
       {/* Hero */}
-      <section className='relative w-full h-[280px] md:h-[380px] overflow-hidden'>
+      <section className='relative w-full h-[280px] md:h-[600px] overflow-hidden'>
         <Image
           src='/icon/nosotros-img.png'
           alt='Quiénes Somos'
@@ -12,15 +12,6 @@ export default function Nosotros() {
           priority
           className='object-cover'
         />
-
-        {/* Overlay opcional para mejorar lectura */}
-        <div className='absolute inset-0 bg-black/40' />
-
-        <div className='relative z-10 flex h-full items-center justify-center px-6 text-center'>
-          <h1 className='text-3xl md:text-5xl font-bold text-white'>
-            Quiénes Somos
-          </h1>
-        </div>
       </section>
 
       {/* Contenido */}
