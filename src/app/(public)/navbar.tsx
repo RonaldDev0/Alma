@@ -37,12 +37,12 @@ const items: IMenuButton[] = [
     href: '/nosotros'
   },
   {
-    label: 'Productos',
-    href: '/list'
-  },
-  {
     label: 'Servicios',
     href: '/servicios'
+  },
+  {
+    label: 'Productos',
+    href: '/list'
   },
   {
     label: 'Privacidad',
