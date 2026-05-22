@@ -12,6 +12,7 @@ export default function Servicios() {
           priority
           className='object-cover'
         />
+        <div className='absolute inset-0 bg-black/45' />
       </section>
 
       {/* Contenido */}

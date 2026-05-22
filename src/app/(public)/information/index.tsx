@@ -63,7 +63,7 @@ const data: IData[] = [
 export default function Information() {
   return (
     <section className='flex flex-col justify-center mt-16 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64 space-y-8'>
-      <h2 className="text-xl font-bold text-center md:text-left">
+      <h2 className='text-primary text-xl font-bold text-center'>
         Soluciones Integrales para Computadores e Impresoras
       </h2>
 
