@@ -95,7 +95,7 @@ const data: IData = [
 
 export default function Footer() {
   return (
-    <footer className='relative w-screen md:w-[98.9vw] min-h-screen md:min-h-[600px] mx-auto mt-16 pt-28 flex justify-center'>
+    <footer className='relative w-screen md:w-[98.9vw] min-h-screen md:min-h-[600px] mx-auto mt-16 pt-28 pb-24 flex justify-center'>
 
       {/* Background */}
       <Image
@@ -158,6 +158,10 @@ export default function Footer() {
           ))}
 
         </div>
+      </div>
+
+      <div className='absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-white text-xs md:text-sm text-center px-4'>
+        © 2026 Comercial Tecnologica. Todos los derechos reservados.
       </div>
     </footer>
   )
