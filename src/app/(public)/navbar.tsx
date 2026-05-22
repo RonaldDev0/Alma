@@ -37,7 +37,7 @@ const items: IMenuButton[] = [
     href: '/nosotros'
   },
   {
-    label: 'Products',
+    label: 'Productos',
     href: '/list'
   },
   {

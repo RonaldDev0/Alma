@@ -16,10 +16,10 @@ export default function Nosotros() {
 
       {/* Contenido */}
       <section className='max-w-6xl mx-auto px-6 py-14'>
-        <div className='grid gap-8 md:grid-cols-[220px_1fr]'>
-          <div>
-            <h2 className='text-2xl md:text-3xl font-bold text-primary'>
-              Comercial Tecnológica
+        <div className='grid gap-12 md:grid-cols-[220px_1fr]'>
+          <div className='flex items-center'>
+            <h2 className='text-2xl md:text-3xl font-bold text-primary whitespace-nowrap'>
+              Quiénes somos
             </h2>
           </div>
 

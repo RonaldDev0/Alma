@@ -109,7 +109,7 @@ export default function Footer() {
       <div className='absolute inset-0 bg-primary/70' />
 
       {/* CONTENT (NO ABSOLUTE) */}
-      <div className='relative z-10 flex flex-col md:flex-row items-start text-white gap-12 md:gap-44 px-6 w-full'>
+      <div className='relative z-10 flex flex-col md:flex-row items-start text-white gap-10 2xl:gap-30 px-6 w-full'>
 
         {/* Logo */}
         <div className='shrink-0'>
@@ -123,7 +123,7 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div className='flex flex-col md:flex-row flex-wrap gap-10 md:gap-28 w-full'>
+        <div className='flex flex-col md:flex-row flex-wrap gap-10 2xl:gap-28 w-full'>
 
           {data.map(item => (
             <div key={item.category} className='flex flex-col gap-4 min-w-[160px]'>
