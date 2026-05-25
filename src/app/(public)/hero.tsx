@@ -4,11 +4,11 @@ export default function Hero() {
   return (
     <section className='relative w-screen md:w-[98.9vw] h-[50vh] md:h-[70vh] min-h-[400px] md:min-h-[600px] mx-auto flex items-center justify-center overflow-hidden'>
       <Image
-        src='/hero-1.jpg'
+        src='/hero-2.png'
         alt='Servicio técnico de impresoras y computadores a domicilio en Bogotá - Enter CT'
         fill
         priority
-        className='object-cover object-center'
+        className='object-cover object-top'
       />
 
       <div className='absolute inset-0 bg-black/60' />
