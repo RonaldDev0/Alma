@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Data from './data'
 
 export default function Servicios() {
   return (
@@ -18,7 +19,8 @@ export default function Servicios() {
         <div className='absolute inset-0 flex items-center justify-center px-6 text-center'>
           <div className='max-w-3xl text-white'>
             <h1 className='text-4xl md:text-6xl font-bold'>
-              Soporte y mantenimiento tecnológico
+              Expertos en
+              <span className='pl-3 text-primary'>Soluciones Tecnologicas</span>
             </h1>
 
             <p className='mt-4 text-base md:text-xl text-white/90'>
@@ -79,6 +81,7 @@ export default function Servicios() {
           </div>
         </div>
       </section>
+      <Data />
     </div>
   )
 }

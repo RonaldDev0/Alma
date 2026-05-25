@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Hero() {
@@ -12,49 +11,20 @@ export default function Hero() {
         className='object-cover object-center'
       />
 
-      <div className='absolute inset-0 bg-linear-to-b from-black/45 to-black/45' />
+      <div className='absolute inset-0 bg-black/60' />
 
-      <div className='absolute z-10 flex flex-col md:flex-row items-center text-center text-white gap-8 md:gap-44 px-6'>
-        <div className='flex flex-col gap-6'>
-          <h1 className='text-2xl md:text-3xl font-bold max-w-96'>
-            Expertos en impresoras y soluciones tecnológicas
-          </h1>
+      <div className='absolute inset-0 flex items-center justify-center px-6 text-center'>
+          <div className='max-w-3xl text-white'>
+            <h1 className='text-4xl md:text-6xl font-bold'>
+              Expertos en
+              <span className='pl-3 text-primary'>Soluciones Tecnologicas</span>
+            </h1>
 
-          <p className='text-base md:text-xl max-w-96 opacity-90'>
-            Impulsamos tu productividad con soporte técnico, suministros y soluciones tecnológicas
-          </p>
+            <p className='mt-4 text-base md:text-xl text-white/90'>
+              Soluciones profesionales para mantener tus equipos y tu empresa funcionando sin interrupciones.
+            </p>
+          </div>
         </div>
-
-        <Link
-          href='/list'
-          className='flex flex-col items-center gap-2 hover:scale-105 transition-transform'
-        >
-          <p className='text-lg md:text-xl'>Productos</p>
-
-          <Image
-            src='/icon/operaciones.png'
-            width={110}
-            height={110}
-            alt='Productos icon'
-            className='invert w-[80px] h-[80px] md:w-[110px] md:h-[110px]'
-          />
-        </Link>
-
-        <Link
-          href='/servicios'
-          className='flex flex-col items-center gap-2 hover:scale-105 transition-transform'
-        >
-          <p className='text-lg md:text-xl'>Servicios</p>
-
-          <Image
-            src='/icon/servicio.png'
-            width={110}
-            height={110}
-            alt='Servicios icon'
-            className='invert w-[80px] h-[80px] md:w-[110px] md:h-[110px]'
-          />
-        </Link>
-      </div>
     </section>
   )
 }

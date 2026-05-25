@@ -106,7 +106,7 @@ export default function Footer() {
       />
 
       {/* Overlay */}
-      <div className='absolute inset-0 bg-primary/70' />
+      <div className='absolute inset-0 bg-primary/90' />
 
       {/* CONTENT (NO ABSOLUTE) */}
       <div className='relative z-10 flex flex-col md:flex-row items-start text-white gap-10 2xl:gap-30 px-6 w-full'>
