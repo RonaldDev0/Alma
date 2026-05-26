@@ -17,7 +17,7 @@ export default function Hero() {
           <div className='max-w-3xl text-white'>
             <h1 className='text-4xl md:text-6xl font-bold'>
               Expertos en
-              <span className='pl-3 text-primary'>Soluciones Tecnologicas</span>
+              <span className='pl-3 text-primary'>Soluciones Tecnológicas</span>
             </h1>
 
             <p className='mt-4 text-base md:text-xl text-white/90'>

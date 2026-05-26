@@ -51,7 +51,7 @@ export default async function List() {
           Catálogo de Toners, Tintas y Repuestos
         </h1>
         <p className='text-muted-foreground text-center max-w-2xl'>
-          Encuentre suministros para impresoras HP, Epson, Samsung y más marcas. Stock disponible con envío a toda Colombia. <span> LLame ya al {number}</span>
+          Encuentre suministros para impresoras Ricoh, HP, Epson, Samsung y más marcas. Stock disponible con envío a toda Colombia. <span> LLame ya al {number}</span>
         </p>
         <Image
           src='/qr-enterct3.png'
