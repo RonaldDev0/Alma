@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { GoogleTagManager } from '@next/third-parties/google'
 import type { ReactNode } from 'react'
 import { Poppins } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
@@ -190,7 +191,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         <link rel='dns-prefetch' href='https://wa.me' />
         <link rel='preconnect' href='https://www.google-analytics.com' />
         <link rel='dns-prefetch' href='https://www.google-analytics.com' />
-        
+
         <link rel='manifest' href='/manifest.json' />
         <link rel='apple-touch-icon' href='/icon-192x192.png' />
         <script
@@ -225,6 +226,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         <SpeedInsights />
         <Analytics />
       </body>
+      <GoogleTagManager gtmId='GTM-KX3CWFJC' />
     </html>
   )
 }
