@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 import type { ReactNode } from 'react'
 import { Poppins } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
@@ -227,6 +227,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         <Analytics />
       </body>
       <GoogleTagManager gtmId='GTM-KX3CWFJC' />
+      <GoogleAnalytics gaId='G-9VJG5RYL37' />
     </html>
   )
 }
