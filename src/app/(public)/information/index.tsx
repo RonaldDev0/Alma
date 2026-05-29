@@ -2,7 +2,7 @@ import { CardInformation, type IData } from './card'
 
 const data: IData[] = [
   {
-    img: '/information/1.webp',
+    img: '/information/1.png',
     title: 'Hogar',
     description: 'Reparación sin salir',
     keypoints: [
@@ -21,7 +21,7 @@ const data: IData[] = [
     ]
   },
   {
-    img: '/information/2.webp',
+    img: '/information/2.png',
     title: 'Locales Comerciales',
     description: 'Atención para Negocios',
     keypoints: [
@@ -40,7 +40,7 @@ const data: IData[] = [
     ]
   },
   {
-    img: '/information/3.webp',
+    img: '/information/4.png',
     title: 'Corporativo',
     description: 'Mantenimiento para Empresas',
     keypoints: [

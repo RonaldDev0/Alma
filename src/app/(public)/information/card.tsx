@@ -22,17 +22,17 @@ export type IData = {
 export function CardInformation({ item }: { item: IData }) {
   return (
     <Card className='w-full overflow-hidden pt-0'>
-      <div className='relative w-full h-[180px] sm:h-[200px]'>
+      <div className='relative w-full h-[300px] sm:h-[300px]'>
         <Image
           src={item.img}
           alt={item.title}
           fill
-          className='object-cover'
+          className='object-cover object-top'
         />
       </div>
 
       <CardHeader>
-        <CardTitle>{item.title}</CardTitle>
+        <CardTitle className='text-primary'>{item.title}</CardTitle>
         <CardDescription>{item.description}</CardDescription>
       </CardHeader>
 

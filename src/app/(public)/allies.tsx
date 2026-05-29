@@ -11,7 +11,7 @@ const allies: Ally[] = [
   { src: '/allies/epson.png',     name: 'Epson',     width: 200 },
   { src: '/allies/hp.png',        name: 'HP',        width: 100 },
   { src: '/allies/lenovo.png',    name: 'Lenovo',    width: 200 },
-  { src: '/allies/microsoft.png', name: 'Microsoft', width: 220 },
+  { src: '/allies/microsoft2.png', name: 'Microsoft', width: 220 },
   { src: '/allies/ricoh.png',     name: 'Ricoh',     width: 180 },
   { src: '/allies/toshiba.png',   name: 'Toshiba',   width: 200 },
   { src: '/allies/zebra.png',     name: 'Zebra',     width: 180 },
