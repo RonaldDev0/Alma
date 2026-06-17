@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className='relative w-screen md:w-[98.9vw] h-[50vh] md:h-[70vh] min-h-[400px] md:min-h-[600px] mx-auto overflow-hidden'>
       <Image
-        src='/hero-2.png'
+        src='/hero-3.png'
         alt='Servicio técnico de impresoras y computadores a domicilio en Bogotá - Enter CT'
         fill
         priority
@@ -26,7 +26,7 @@ export default function Hero() {
           </h1>
 
           <p className='mt-4 text-base md:text-xl text-white/90'>
-            Soluciones profesionales para mantener tus equipos y tu empresa
+            Soluciones profesionales para mantener sus equipos y su empresa
             funcionando sin interrupciones.
           </p>
         </div>

@@ -24,7 +24,7 @@ export default function Servicios() {
             </h1>
 
             <p className='mt-4 text-base md:text-xl text-white/90'>
-              Soluciones profesionales para mantener tus equipos y tu empresa funcionando sin interrupciones.
+              Soluciones profesionales para mantener sus equipos y su empresa funcionando sin interrupciones.
             </p>
           </div>
         </div>
