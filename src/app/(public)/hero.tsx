@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 
 export default function Hero() {
   return (
-    <section className='relative w-screen md:w-[98.9vw] h-[50vh] md:h-[70vh] min-h-[400px] md:min-h-[600px] mx-auto overflow-hidden'>
+    <section className='relative w-screen md:w-[98.9vw] h-[50vh] md:h-[70vh] min-h-100 md:min-h-150 mx-auto overflow-hidden'>
       <Image
         src='/hero-3.png'
         alt='Servicio técnico de impresoras y computadores a domicilio en Bogotá - Enter CT'
