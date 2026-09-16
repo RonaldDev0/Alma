@@ -27,20 +27,20 @@ export default function Nosotros() {
           <div className='space-y-5 text-muted-foreground leading-7 text-base md:text-lg'>
             <p>
               Somos una empresa especializada en servicio técnico,
-              mantenimiento, venta de suministros para impresoras.
+              mantenimiento y venta de suministros para impresoras.
               Contamos con experiencia brindando soluciones tecnológicas
               confiables para hogares, negocios, empresas.
             </p>
             <p>
-              Nos enfocamos en ofrecer un servicio rápido, eficiente, de
-              calidad, trabajando con personal técnico capacitado,
-              utilizando suministros, repuestos de las mejores marcas del
+              Nos enfocamos en ofrecer un servicio rápido, eficiente y de
+              calidad; trabajando con personal técnico capacitado,
+              utilizando suministros y repuestos de las mejores marcas del
               mercado.
             </p>
             <p>
               Atendemos servicios a domicilio en Bogotá, Chía, Cajicá,
               Funza, Madrid, Mosquera. También realizamos despachos a
-              nivel nacional, garantizando acompañamiento, soporte
+              nivel nacional, garantizando acompañamiento y soporte
               oportuno para cada cliente.
             </p>
             <p>
